@@ -38,9 +38,6 @@ module Project
 	output  [6:0]   HEX6;
 	output  [6:0]   HEX7;
 	
-	wire resetn;
-	assign resetn = SW[0];
-	
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
 	wire [2:0] colour;
 	wire [7:0] x;
@@ -50,7 +47,7 @@ module Project
 	// Define the number of colours as well as the initial background
 	// image file (.MIF) for the controller.
 	vga_adapter VGA(
-			.resetn(resetn),
+			.resetn(SW[0]),
 			.clock(CLOCK_50),
 			.colour(3'b111),
 			.x(x),
@@ -73,9 +70,12 @@ module Project
 	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
 	// for the VGA controller, in addition to any other functionality your design may require.
 	
-	wire stop;
-	wire move;
-	wire [1:0] direction;
+	wire [3:0] offset_x;
+	wire [3:0] offset_y;
+	wire [7:0] x0;
+	wire [6:0] y0;
+	wire color;
+	wire erase;
 	wire start;
 	
 	rate_divider my_rate_div(
@@ -90,24 +90,25 @@ module Project
 					.down(~KEY[2]),
 					.left(~KEY[1]),
 					.right(~KEY[0]),
-					.stop(stop),
-					.move(move),
-					.dir_out(direction),
-					.state(LEDR[7:4])
+					.offset_x(offset_x),
+					.offset_y(offset_y),
+					.erase(erase),
+					.x_out(x0),
+					.y_out(y0)
 					);
 	
 	datapath my_datapath(
-					.clock_50(CLOCK_50),
 					.clock(start),
-					.move(move),
-					.direction(direction),
+					.x0(x0),
+					.y0(y0),
+					.offset_x(offset_x),
+					.offset_y(offset_y),
+					.erase(erase),
+					.color_in(1'b0),
+					.color_out(color),
 					.x_out(x),
-					.y_out(y),
-					.stop(stop)
+					.y_out(y)
 					);
-	assign LEDR[0] = stop;
-	assign LEDR[2:1] = direction;
-	assign LEDR[3] = start;	
 
 	hex_display my_hex6(
 					.IN(x[3:0]),
@@ -120,82 +121,65 @@ module Project
 					);
 endmodule
 
-module control(reset_n, clock, up, down, left, right, stop, move, dir_out, state);
+module control(reset_n, clock, up, down, left, right, offset_x, offset_y, erase, x_out, y_out);
 	input reset_n;
 	input clock;
 	input up;
 	input down;
 	input left;
 	input right;
-	input stop;
-	output reg move;
-	output reg [1:0] dir_out;
-	output [3:0] state;
+	output [3:0] offset_x;
+	output [3:0] offset_y;
+	output erase;
+	output [7:0] x_out;
+	output [6:0] y_out;
 	
 	localparam S_REST = 4'b0000, S_UP = 4'b1000, S_DOWN = 4'b0100, S_LEFT = 4'b0010, S_RIGHT = 4'b0001;
 	
 	reg [3:0] current_state;
 	initial current_state = S_REST;
-	reg [3:0] next_state;
-	always @(*)
-		begin
-			if (up == 1'b1 && current_state == S_REST)
-				next_state <= S_UP;
-			else if (down == 1'b1 && current_state == S_REST)
-				next_state <= S_DOWN;
-			else if (left == 1'b1 && current_state == S_REST)
-				next_state <= S_LEFT;
-			else if (right == 1'b1 && current_state == S_REST)
-				next_state <= S_RIGHT;
-			else if (stop == 1'b1 && current_state != S_REST)
-				next_state <= S_REST;
-		end
-		
+	reg [7:0] x0;
+	reg [6:0] y0; 
+	
 	always @(posedge clock)
 		begin
-			current_state <= next_state;
-			
-			if (current_state == S_UP)
-				begin
-				move <= 1'b1;
-				dir_out <= 2'b01;
-				end
-			if (current_state == S_DOWN)
-				begin
-				move <= 1'b1;
-				dir_out <= 2'b00;
-				end
-			if (current_state == S_LEFT)
-				begin
-				move <= 1'b1;
-				dir_out <= 2'b10;
-				end
-			if (current_state == S_RIGHT)
-				begin
-				move <= 1'b1;
-				dir_out <= 2'b11;
-				end
-			else
-				move <= 1'b0;
+			case(current_state)
+				S_REST:	begin
+						current_state <= up ? S_UP : S_REST;
+						current_state <= down ? S_DOWN : S_REST;
+						current_state <= left ? S_LEFT : S_REST;
+						current_state <= right ? S_RIGHT : S_REST;
+						end
+						
+				S_UP:	begin
+						if (y0 > 1'b0)
+							y0 <= y0 - 1'b1;
+						end
+						
+				S_DOWN:	begin
+						if (y0 < 7'b1110100)
+							y0 <= y0 + 1'b1;
+						end
+						
+				S_LEFT:	begin
+						if (x0 > 1'b0)
+							x0 <= x0 - 1'b1;
+						end
+						
+				S_RIGHT:begin
+						if (x0 < 8'b10011100)
+							x0 <= x0 + 1'b1;
+						end
+				default:current_state <= S_REST;
+			endcase
 		end
-	assign state = current_state;
-endmodule
-
-module datapath(clock_50, clock, move, direction, x_out, y_out, stop);
-	input clock;
-	input clock_50;
-	input move;
-	input [1:0] direction;
-	output [7:0] x_out;
-	output [6:0] y_out;
-	output reg stop;
-	
-	reg [7:0] x0;
-	reg [6:0] y0;	
+	assign x_out = x0;
+	assign y_out = y0;
 	
 	reg [3:0] x;
 	reg [3:0] y;
-	always @(posedge clock_50)
+	
+	always @(posedge clock)
 		begin
 			if (x < 4'b0100)
 				x <= x + 1'b1;
@@ -210,42 +194,33 @@ module datapath(clock_50, clock, move, direction, x_out, y_out, stop);
 				y <= 1'b0;
 				end
 		end
+	assign offset_x = x;
+	assign offset_y = y;
+endmodule
 
-	localparam DOWN = 2'b00, UP = 2'b01, LEFT = 2'b10, RIGHT = 2'b11;
+module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x_out, y_out);
+	input clock;
+	input [7:0] x0;
+	input [6:0] y0;
+	input [3:0] offset_x;
+	input [3:0] offset_y;
+	input [2:0] color_in;
+	input erase;
+	output [2:0] color_out;
+	output [7:0] x_out;
+	output [6:0] y_out;	
 	
+	reg [7:0] x;
+	reg [6:0] y;
 	always @(posedge clock)
 		begin
-			if (move == 1'b1)
-				begin
-				if (direction == UP && y0 > 1'b0)
-					y0 <= y0 - 1'b1;
-			
-				else if (direction == DOWN && y0 < 7'b1110100)
-					y0 <= y0 + 1'b1;
-			
-				else if (direction == LEFT && x0 > 1'b0)
-					x0 <= x0 - 1'b1;
-			
-				else if (direction == RIGHT && x0 < 8'b10011100)
-					x0 <= x0 + 1'b1;
-				end
+			x <= x0;
+			y <= y0;
 		end
-	assign x_out = x0 + x;
-	assign y_out = y0 + y;
-	
-	always @(*)
-		begin
-			if (x0 == 1'b0 && direction == LEFT)
-				stop = 1'b1;
-			else if (x0 == 8'b10011100 && direction == RIGHT)
-				stop = 1'b1;
-			else if (y0 == 1'b0 && direction == UP)
-				stop = 1'b1;
-			else if (y0 == 7'b1110100 && direction == DOWN)
-				stop = 1'b1;
-			else
-				stop = 1'b0;
-		end
+		
+	assign x_out = x + offset_x;
+	assign y_out = y + offset_y;
+	assign color_out = erase ? color_in : 3'b000;
 endmodule
 
 module rate_divider(clock, out);
