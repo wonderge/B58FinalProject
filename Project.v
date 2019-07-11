@@ -16,6 +16,8 @@ module Project
 		VGA_G,	 						//	VGA Green[9:0]
 		VGA_B,   						//	VGA Blue[9:0]
 		LEDR,
+		HEX4,
+		HEX5,
 		HEX6,
 		HEX7
 	);
@@ -35,6 +37,8 @@ module Project
 	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
 	output  [9:0]   LEDR;
+	output  [6:0]   HEX4;
+	output  [6:0]   HEX5;
 	output  [6:0]   HEX6;
 	output  [6:0]   HEX7;
 	
@@ -77,6 +81,7 @@ module Project
 	wire color;
 	wire erase;
 	wire start;
+	wire [3:0] state;
 	
 	rate_divider my_rate_div(
 						.clock(CLOCK_50),
@@ -86,15 +91,17 @@ module Project
 	control my_control(
 					.reset_n(1'b0),
 					.clock(CLOCK_50),
-					.up(~KEY[3]),
-					.down(~KEY[2]),
-					.left(~KEY[1]),
-					.right(~KEY[0]),
+					.draw(start),
+					.up(SW[4]),
+					.down(SW[3]),
+					.left(SW[2]),
+					.right(SW[1]),
 					.offset_x(offset_x),
 					.offset_y(offset_y),
 					.erase(erase),
 					.x_out(x0),
-					.y_out(y0)
+					.y_out(y0),
+					.state(state)
 					);
 	
 	datapath my_datapath(
@@ -109,21 +116,34 @@ module Project
 					.x_out(x),
 					.y_out(y)
 					);
+					
+	hex_display my_hex4(
+					.IN(y0[3:0]),
+					.OUT(HEX4[6:0])
+					);
+	
+	hex_display my_hex5(
+					.IN(y0[6:4]),
+					.OUT(HEX5[6:0])
+					);
 
 	hex_display my_hex6(
-					.IN(x[3:0]),
+					.IN(x0[3:0]),
 					.OUT(HEX6[6:0])
 					);
 					
 	hex_display my_hex7(
-					.IN(x[7:4]),
+					.IN(x0[7:4]),
 					.OUT(HEX7[6:0])
 					);
+	
+	assign LEDR[3:0] = state;
 endmodule
 
-module control(reset_n, clock, up, down, left, right, offset_x, offset_y, erase, x_out, y_out);
+module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
 	input reset_n;
 	input clock;
+	input draw;
 	input up;
 	input down;
 	input left;
@@ -133,6 +153,7 @@ module control(reset_n, clock, up, down, left, right, offset_x, offset_y, erase,
 	output erase;
 	output [7:0] x_out;
 	output [6:0] y_out;
+	output [3:0] state;
 	
 	localparam S_REST = 4'b0000, S_UP = 4'b1000, S_DOWN = 4'b0100, S_LEFT = 4'b0010, S_RIGHT = 4'b0001;
 	
@@ -140,35 +161,49 @@ module control(reset_n, clock, up, down, left, right, offset_x, offset_y, erase,
 	initial current_state = S_REST;
 	reg [7:0] x0;
 	reg [6:0] y0; 
+	initial x0 = 7'd80;
+	initial y0 = 7'd60;
 	
 	always @(posedge clock)
 		begin
 			case(current_state)
 				S_REST:	begin
-						current_state <= up ? S_UP : S_REST;
-						current_state <= down ? S_DOWN : S_REST;
-						current_state <= left ? S_LEFT : S_REST;
-						current_state <= right ? S_RIGHT : S_REST;
+						if (up == 1'b1)
+							current_state <= S_UP;
+						else if (down == 1'b1)
+							current_state <= S_DOWN;
+						else if (left == 1'b1)
+							current_state <= S_LEFT;
+						else if (right == 1'b1)
+							current_state <= S_RIGHT;
 						end
 						
 				S_UP:	begin
-						if (y0 > 1'b0)
+						if (y0 > 1'b0 && draw == 1'b1)
 							y0 <= y0 - 1'b1;
+						else if (y0 == 1'b0)
+							current_state <= S_REST;
 						end
 						
 				S_DOWN:	begin
-						if (y0 < 7'b1110100)
+						if (y0 < 7'b1110010 && draw == 1'b1)
 							y0 <= y0 + 1'b1;
+						else if (y0 == 7'b1110010)
+							current_state <= S_REST;
 						end
 						
 				S_LEFT:	begin
-						if (x0 > 1'b0)
+						if (x0 > 1'b0 && draw == 1'b1)
 							x0 <= x0 - 1'b1;
+						else if (x0 == 1'b0)
+							current_state <= S_REST;
 						end
 						
 				S_RIGHT:begin
-						if (x0 < 8'b10011100)
+						if (x0 < 8'b10011010 && draw == 1'b1)
 							x0 <= x0 + 1'b1;
+						else if (x0 == 8'b10011010)
+							current_state <= S_REST;
 						end
 				default:current_state <= S_REST;
 			endcase
@@ -196,6 +231,8 @@ module control(reset_n, clock, up, down, left, right, offset_x, offset_y, erase,
 		end
 	assign offset_x = x;
 	assign offset_y = y;
+	
+	assign state = current_state;
 endmodule
 
 module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x_out, y_out);
@@ -232,7 +269,7 @@ module rate_divider(clock, out);
 		begin
 			if (num_cycles == 1'b0)
 				begin
-				num_cycles <= 28'b101111101011110000011111;
+				num_cycles <= 28'b10110111000110101111;
 				out <= 1'b1;
 				end
 			else
