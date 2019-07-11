@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project
-Tue Jul 09 18:56:34 2019
+Thu Jul 11 12:57:13 2019
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -15,10 +15,10 @@ Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |Project|control:my_control|current_state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated
  16. Parameter Settings for User Entity Instance: vga_adapter:VGA
@@ -31,11 +31,14 @@ Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
  23. altpll Parameter Settings by Entity Instance
  24. Port Connectivity Checks: "hex_display:my_hex7"
  25. Port Connectivity Checks: "hex_display:my_hex6"
- 26. Port Connectivity Checks: "control:my_control"
- 27. Port Connectivity Checks: "vga_adapter:VGA"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+ 26. Port Connectivity Checks: "hex_display:my_hex5"
+ 27. Port Connectivity Checks: "hex_display:my_hex4"
+ 28. Port Connectivity Checks: "datapath:my_datapath"
+ 29. Port Connectivity Checks: "control:my_control"
+ 30. Port Connectivity Checks: "vga_adapter:VGA"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +65,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 09 18:56:34 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 11 12:57:13 2019       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; Project                                     ;
 ; Top-level Entity Name              ; Project                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 246                                         ;
-;     Total combinational functions  ; 241                                         ;
-;     Dedicated logic registers      ; 88                                          ;
-; Total registers                    ; 88                                          ;
-; Total pins                         ; 74                                          ;
+; Total logic elements               ; 269                                         ;
+;     Total combinational functions  ; 255                                         ;
+;     Dedicated logic registers      ; 100                                         ;
+; Total registers                    ; 100                                         ;
+; Total pins                         ; 88                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -178,39 +181,38 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
-; vga_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_pll.v                ;         ;
-; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_controller.v         ;         ;
-; vga_address_translator.v         ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_address_translator.v ;         ;
-; vga_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v            ;         ;
-; Project.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v                ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                    ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                        ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
-; db/altsyncram_60g1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/altsyncram_60g1.tdf   ;         ;
-; db/decode_lsa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/decode_lsa.tdf        ;         ;
-; db/decode_e8a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/decode_e8a.tdf        ;         ;
-; db/mux_0nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/mux_0nb.tdf           ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                 ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; vga_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v                ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_controller.v         ;         ;
+; vga_address_translator.v         ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_address_translator.v ;         ;
+; vga_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v            ;         ;
+; Project.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v                ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_60g1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf   ;         ;
+; db/decode_lsa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_lsa.tdf        ;         ;
+; db/decode_e8a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_e8a.tdf        ;         ;
+; db/mux_0nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/mux_0nb.tdf           ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -218,23 +220,23 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 246            ;
+; Estimated Total logic elements              ; 269            ;
 ;                                             ;                ;
-; Total combinational functions               ; 241            ;
+; Total combinational functions               ; 255            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 70             ;
-;     -- 3 input functions                    ; 55             ;
-;     -- <=2 input functions                  ; 116            ;
+;     -- 4 input functions                    ; 82             ;
+;     -- 3 input functions                    ; 51             ;
+;     -- <=2 input functions                  ; 122            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 138            ;
+;     -- normal mode                          ; 152            ;
 ;     -- arithmetic mode                      ; 103            ;
 ;                                             ;                ;
-; Total registers                             ; 88             ;
-;     -- Dedicated logic registers            ; 88             ;
+; Total registers                             ; 100            ;
+;     -- Dedicated logic registers            ; 100            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 74             ;
+; I/O pins                                    ; 88             ;
 ; Total memory bits                           ; 57600          ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
@@ -243,9 +245,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 53             ;
-; Total fan-out                               ; 1276           ;
-; Average fan-out                             ; 2.62           ;
+; Maximum fan-out                             ; 65             ;
+; Total fan-out                               ; 1360           ;
+; Average fan-out                             ; 2.51           ;
 +---------------------------------------------+----------------+
 
 
@@ -254,12 +256,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Project                                                ; 241 (0)             ; 88 (0)                    ; 57600       ; 0            ; 0       ; 0         ; 74   ; 0            ; |Project                                                                                                ; Project                ; work         ;
-;    |control:my_control|                                 ; 26 (26)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|control:my_control                                                                             ; control                ; work         ;
-;    |datapath:my_datapath|                               ; 54 (54)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                           ; datapath               ; work         ;
+; |Project                                                ; 255 (0)             ; 100 (0)                   ; 57600       ; 0            ; 0       ; 0         ; 88   ; 0            ; |Project                                                                                                ; Project                ; work         ;
+;    |control:my_control|                                 ; 56 (56)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|control:my_control                                                                             ; control                ; work         ;
+;    |datapath:my_datapath|                               ; 21 (21)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                           ; datapath               ; work         ;
+;    |hex_display:my_hex4|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex4                                                                            ; hex_display            ; work         ;
+;    |hex_display:my_hex5|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex5                                                                            ; hex_display            ; work         ;
 ;    |hex_display:my_hex6|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex6                                                                            ; hex_display            ; work         ;
 ;    |hex_display:my_hex7|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex7                                                                            ; hex_display            ; work         ;
-;    |rate_divider:my_rate_div|                           ; 49 (49)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|rate_divider:my_rate_div                                                                       ; rate_divider           ; work         ;
+;    |rate_divider:my_rate_div|                           ; 52 (52)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|rate_divider:my_rate_div                                                                       ; rate_divider           ; work         ;
 ;    |vga_adapter:VGA|                                    ; 98 (2)              ; 30 (0)                    ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 12 (0)              ; 4 (0)                     ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_60g1:auto_generated|               ; 12 (0)              ; 4 (4)                     ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated                          ; altsyncram_60g1        ; work         ;
@@ -287,30 +291,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |Project|control:my_control|current_state                                                                               ;
-+-----------------------+--------------------+----------------------+----------------------+-----------------------+----------------------+
-; Name                  ; current_state.S_UP ; current_state.S_DOWN ; current_state.S_LEFT ; current_state.S_RIGHT ; current_state.S_REST ;
-+-----------------------+--------------------+----------------------+----------------------+-----------------------+----------------------+
-; current_state.S_RIGHT ; 0                  ; 0                    ; 0                    ; 0                     ; 0                    ;
-; current_state.S_LEFT  ; 0                  ; 0                    ; 1                    ; 1                     ; 0                    ;
-; current_state.S_DOWN  ; 0                  ; 1                    ; 0                    ; 1                     ; 0                    ;
-; current_state.S_UP    ; 1                  ; 0                    ; 0                    ; 1                     ; 0                    ;
-; current_state.S_REST  ; 0                  ; 0                    ; 0                    ; 1                     ; 1                    ;
-+-----------------------+--------------------+----------------------+----------------------+-----------------------+----------------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; control:my_control|next_state.S_REST_138           ; GND                 ; yes                    ;
-; control:my_control|next_state.S_LEFT_171           ; GND                 ; yes                    ;
-; control:my_control|next_state.S_DOWN_160           ; GND                 ; yes                    ;
-; control:my_control|next_state.S_UP_149             ; GND                 ; yes                    ;
-; control:my_control|next_state.S_RIGHT_182          ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-----------------------+----------------------+--------------------+----------------------+----------------------+-----------------------+
+; Name                  ; current_state.S_REST ; current_state.S_UP ; current_state.S_DOWN ; current_state.S_LEFT ; current_state.S_RIGHT ;
++-----------------------+----------------------+--------------------+----------------------+----------------------+-----------------------+
+; current_state.S_REST  ; 0                    ; 0                  ; 0                    ; 0                    ; 0                     ;
+; current_state.S_RIGHT ; 1                    ; 0                  ; 0                    ; 0                    ; 1                     ;
+; current_state.S_LEFT  ; 1                    ; 0                  ; 0                    ; 1                    ; 0                     ;
+; current_state.S_DOWN  ; 1                    ; 0                  ; 1                    ; 0                    ; 0                     ;
+; current_state.S_UP    ; 1                    ; 1                  ; 0                    ; 0                    ; 0                     ;
++-----------------------+----------------------+--------------------+----------------------+----------------------+-----------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -318,23 +307,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; control:my_control|current_state~3    ; Lost fanout                            ;
-; control:my_control|current_state~4    ; Lost fanout                            ;
-; control:my_control|current_state~5    ; Lost fanout                            ;
-; datapath:my_datapath|x[3]             ; Stuck at GND due to stuck port data_in ;
-; datapath:my_datapath|y[3]             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
+; control:my_control|x[3]               ; Stuck at GND due to stuck port data_in ;
+; control:my_control|y[3]               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                    ;
-+---------------------------+---------------------------+----------------------------------------+
-; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------------------+---------------------------+----------------------------------------+
-; datapath:my_datapath|x[3] ; Stuck at GND              ; datapath:my_datapath|y[3]              ;
-;                           ; due to stuck port data_in ;                                        ;
-+---------------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                  ;
++-------------------------+---------------------------+----------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------+---------------------------+----------------------------------------+
+; control:my_control|x[3] ; Stuck at GND              ; control:my_control|y[3]                ;
+;                         ; due to stuck port data_in ;                                        ;
++-------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -342,14 +328,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 88    ;
+; Total registers                              ; 100   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; control:my_control|y0[2]               ; 12      ;
+; control:my_control|y0[3]               ; 12      ;
+; control:my_control|y0[5]               ; 11      ;
+; control:my_control|y0[4]               ; 11      ;
+; control:my_control|x0[4]               ; 12      ;
+; control:my_control|x0[6]               ; 10      ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -357,10 +358,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Project|vga_adapter:VGA|vga_controller:controller|yCounter[6]                                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Project|control:my_control|dir_out[0]                                                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[2] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Project|control:my_control|next_state.S_REST                                                              ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Project|vga_adapter:VGA|vga_controller:controller|yCounter[4]                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |Project|control:my_control|y0[1]                                                                          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |Project|control:my_control|x0[2]                                                                          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |Project|control:my_control|y0[5]                                                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |Project|control:my_control|x0[4]                                                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[1] ;
+; 13:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |Project|control:my_control|Selector2                                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
 
 
@@ -916,6 +920,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_display:my_hex5"                                                                                                                       ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                    ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; IN   ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "IN[3..3]" will be connected to GND. ;
+; OUT  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "OUT[7..7]" have no fanouts                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hex_display:my_hex4"                                                                                                   ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; OUT  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "OUT[7..7]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:my_datapath"                                                                                                                                 ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                          ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; color_in  ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "color_in[2..1]" will be connected to GND. ;
+; color_in  ; Input  ; Info     ; Stuck at GND                                                                                                                                     ;
+; color_out ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "color_out[2..1]" have no fanouts                     ;
+; color_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                              ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------+
 ; Port Connectivity Checks: "control:my_control" ;
 +---------+-------+----------+-------------------+
@@ -940,26 +975,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 74                          ;
-; cycloneiii_ff         ; 88                          ;
+; boundary_port         ; 88                          ;
+; cycloneiii_ff         ; 100                         ;
 ;     CLR               ; 20                          ;
-;     ENA               ; 20                          ;
-;     plain             ; 48                          ;
-; cycloneiii_lcell_comb ; 245                         ;
+;     ENA               ; 18                          ;
+;     plain             ; 62                          ;
+; cycloneiii_lcell_comb ; 260                         ;
 ;     arith             ; 103                         ;
 ;         2 data inputs ; 70                          ;
 ;         3 data inputs ; 33                          ;
-;     normal            ; 142                         ;
+;     normal            ; 157                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 35                          ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 70                          ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 82                          ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.42                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -978,31 +1013,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Tue Jul 09 18:56:14 2019
+    Info: Processing started: Thu Jul 11 12:56:53 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_pll.v Line: 36
+    Info (12023): Found entity 1: vga_pll File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 78
 Info (12021): Found 5 design units, including 5 entities, in source file project.v
-    Info (12023): Found entity 1: Project File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 3
-    Info (12023): Found entity 2: control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 123
-    Info (12023): Found entity 3: datapath File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 184
-    Info (12023): Found entity 4: rate_divider File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 251
-    Info (12023): Found entity 5: hex_display File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 271
+    Info (12023): Found entity 1: Project File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 3
+    Info (12023): Found entity 2: control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 143
+    Info (12023): Found entity 3: datapath File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 238
+    Info (12023): Found entity 4: rate_divider File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 263
+    Info (12023): Found entity 5: hex_display File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 283
 Info (12127): Elaborating entity "Project" for the top level hierarchy
-Warning (10034): Output port "LEDR[9..8]" at Project.v(37) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 37
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 67
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 213
+Warning (10034): Output port "LEDR[9..4]" at Project.v(39) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 68
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1019,21 +1054,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60g1.tdf
-    Info (12023): Found entity 1: altsyncram_60g1 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/altsyncram_60g1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_60g1 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_60g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lsa.tdf
-    Info (12023): Found entity 1: decode_lsa File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/decode_lsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/altsyncram_60g1.tdf Line: 47
+    Info (12023): Found entity 1: decode_lsa File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_lsa.tdf Line: 23
+Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_e8a.tdf
-    Info (12023): Found entity 1: decode_e8a File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/decode_e8a.tdf Line: 23
-Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/altsyncram_60g1.tdf Line: 48
+    Info (12023): Found entity 1: decode_e8a File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_e8a.tdf Line: 23
+Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_0nb.tdf
-    Info (12023): Found entity 1: mux_0nb File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/mux_0nb.tdf Line: 23
-Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/db/altsyncram_60g1.tdf Line: 50
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_0nb File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/mux_0nb.tdf Line: 23
+Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 50
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1045,46 +1080,44 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "rate_divider" for hierarchy "rate_divider:my_rate_div" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 84
-Info (12128): Elaborating entity "control" for hierarchy "control:my_control" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 97
-Warning (10240): Verilog HDL Always Construct warning at Project.v(142): inferring latch(es) for variable "next_state", which holds its previous value in one or more paths through the always construct File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (10041): Inferred latch for "next_state.S_REST" at Project.v(142) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (10041): Inferred latch for "next_state.S_UP" at Project.v(142) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (10041): Inferred latch for "next_state.S_DOWN" at Project.v(142) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (10041): Inferred latch for "next_state.S_LEFT" at Project.v(142) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (10041): Inferred latch for "next_state.S_RIGHT" at Project.v(142) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 142
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 107
-Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex6" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 115
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "rate_divider" for hierarchy "rate_divider:my_rate_div" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 89
+Info (12128): Elaborating entity "control" for hierarchy "control:my_control" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 105
+Warning (10034): Output port "erase" at Project.v(153) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 153
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 118
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex4" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 123
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 33
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 37
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 37
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 35
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/Final Project/Project.v Line: 24
-Info (21057): Implemented 337 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 27
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 27
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 27
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 27
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+Info (21057): Implemented 370 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 253 logic cells
+    Info (21059): Implemented 73 output pins
+    Info (21061): Implemented 272 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4789 megabytes
-    Info: Processing ended: Tue Jul 09 18:56:34 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Thu Jul 11 12:57:13 2019
     Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Total CPU time (on all processors): 00:00:41
 
 
