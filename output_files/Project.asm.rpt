@@ -1,5 +1,9 @@
 Assembler report for Project
+<<<<<<< Updated upstream
 Thu Jul 11 12:57:53 2019
+=======
+Tue Jul 16 16:16:33 2019
+>>>>>>> Stashed changes
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -38,7 +42,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< Updated upstream
 ; Assembler Status      ; Successful - Thu Jul 11 12:57:53 2019 ;
+=======
+; Assembler Status      ; Successful - Tue Jul 16 16:16:33 2019 ;
+>>>>>>> Stashed changes
 ; Revision Name         ; Project                               ;
 ; Top-level Entity Name ; Project                               ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +75,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                             ;
 +----------------+-----------------------------------------------------------------------------------------------------+
+<<<<<<< Updated upstream
 ; JTAG usercode  ; 0x00593545                                                                                          ;
 ; Checksum       ; 0x00593545                                                                                          ;
+=======
+; JTAG usercode  ; 0x0059330A                                                                                          ;
+; Checksum       ; 0x0059330A                                                                                          ;
+>>>>>>> Stashed changes
 +----------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -78,15 +91,24 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+<<<<<<< Updated upstream
     Info: Processing started: Thu Jul 11 12:57:49 2019
+=======
+    Info: Processing started: Tue Jul 16 16:16:28 2019
+>>>>>>> Stashed changes
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Project -c Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4691 megabytes
+<<<<<<< Updated upstream
     Info: Processing ended: Thu Jul 11 12:57:53 2019
     Info: Elapsed time: 00:00:04
+=======
+    Info: Processing ended: Tue Jul 16 16:16:33 2019
+    Info: Elapsed time: 00:00:05
+>>>>>>> Stashed changes
     Info: Total CPU time (on all processors): 00:00:04
 
 

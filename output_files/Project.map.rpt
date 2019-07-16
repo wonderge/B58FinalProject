@@ -1,5 +1,9 @@
 Analysis & Synthesis report for Project
+<<<<<<< Updated upstream
 Thu Jul 11 12:57:13 2019
+=======
+Tue Jul 16 16:15:43 2019
+>>>>>>> Stashed changes
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -65,15 +69,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
+<<<<<<< Updated upstream
 ; Analysis & Synthesis Status        ; Successful - Thu Jul 11 12:57:13 2019       ;
+=======
+; Analysis & Synthesis Status        ; Successful - Tue Jul 16 16:15:43 2019       ;
+>>>>>>> Stashed changes
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; Project                                     ;
 ; Top-level Entity Name              ; Project                                     ;
 ; Family                             ; Cyclone IV E                                ;
+<<<<<<< Updated upstream
 ; Total logic elements               ; 269                                         ;
 ;     Total combinational functions  ; 255                                         ;
 ;     Dedicated logic registers      ; 100                                         ;
 ; Total registers                    ; 100                                         ;
+=======
+; Total logic elements               ; 272                                         ;
+;     Total combinational functions  ; 252                                         ;
+;     Dedicated logic registers      ; 101                                         ;
+; Total registers                    ; 101                                         ;
+>>>>>>> Stashed changes
 ; Total pins                         ; 88                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
@@ -220,6 +235,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
+<<<<<<< Updated upstream
 ; Estimated Total logic elements              ; 269            ;
 ;                                             ;                ;
 ; Total combinational functions               ; 255            ;
@@ -230,6 +246,18 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
 ;     -- normal mode                          ; 152            ;
+=======
+; Estimated Total logic elements              ; 272            ;
+;                                             ;                ;
+; Total combinational functions               ; 252            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 85             ;
+;     -- 3 input functions                    ; 55             ;
+;     -- <=2 input functions                  ; 112            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 149            ;
+>>>>>>> Stashed changes
 ;     -- arithmetic mode                      ; 103            ;
 ;                                             ;                ;
 ; Total registers                             ; 100            ;
@@ -245,9 +273,15 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
+<<<<<<< Updated upstream
 ; Maximum fan-out                             ; 65             ;
 ; Total fan-out                               ; 1360           ;
 ; Average fan-out                             ; 2.51           ;
+=======
+; Maximum fan-out                             ; 45             ;
+; Total fan-out                               ; 1386           ;
+; Average fan-out                             ; 2.57           ;
+>>>>>>> Stashed changes
 +---------------------------------------------+----------------+
 
 
@@ -256,14 +290,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+------------------------+--------------+
+<<<<<<< Updated upstream
 ; |Project                                                ; 255 (0)             ; 100 (0)                   ; 57600       ; 0            ; 0       ; 0         ; 88   ; 0            ; |Project                                                                                                ; Project                ; work         ;
 ;    |control:my_control|                                 ; 56 (56)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|control:my_control                                                                             ; control                ; work         ;
 ;    |datapath:my_datapath|                               ; 21 (21)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                           ; datapath               ; work         ;
+=======
+; |Project                                                ; 252 (0)             ; 101 (0)                   ; 57600       ; 0            ; 0       ; 0         ; 88   ; 0            ; |Project                                                                                                ; Project                ; work         ;
+;    |control:my_control|                                 ; 58 (58)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|control:my_control                                                                             ; control                ; work         ;
+;    |datapath:my_datapath|                               ; 15 (15)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                           ; datapath               ; work         ;
+>>>>>>> Stashed changes
 ;    |hex_display:my_hex4|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex4                                                                            ; hex_display            ; work         ;
 ;    |hex_display:my_hex5|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex5                                                                            ; hex_display            ; work         ;
 ;    |hex_display:my_hex6|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex6                                                                            ; hex_display            ; work         ;
 ;    |hex_display:my_hex7|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|hex_display:my_hex7                                                                            ; hex_display            ; work         ;
-;    |rate_divider:my_rate_div|                           ; 52 (52)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|rate_divider:my_rate_div                                                                       ; rate_divider           ; work         ;
+;    |rate_divider:my_rate_div|                           ; 53 (53)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|rate_divider:my_rate_div                                                                       ; rate_divider           ; work         ;
 ;    |vga_adapter:VGA|                                    ; 98 (2)              ; 30 (0)                    ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 12 (0)              ; 4 (0)                     ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_60g1:auto_generated|               ; 12 (0)              ; 4 (4)                     ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated                          ; altsyncram_60g1        ; work         ;
@@ -979,6 +1019,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 100                         ;
 ;     CLR               ; 20                          ;
 ;     ENA               ; 18                          ;
+<<<<<<< Updated upstream
 ;     plain             ; 62                          ;
 ; cycloneiii_lcell_comb ; 260                         ;
 ;     arith             ; 103                         ;
@@ -990,11 +1031,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         2 data inputs ; 31                          ;
 ;         3 data inputs ; 18                          ;
 ;         4 data inputs ; 82                          ;
+=======
+;     plain             ; 63                          ;
+; cycloneiii_lcell_comb ; 257                         ;
+;     arith             ; 103                         ;
+;         2 data inputs ; 70                          ;
+;         3 data inputs ; 33                          ;
+;     normal            ; 154                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 85                          ;
+>>>>>>> Stashed changes
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
+<<<<<<< Updated upstream
 ; Average LUT depth     ; 3.21                        ;
+=======
+; Average LUT depth     ; 3.24                        ;
+>>>>>>> Stashed changes
 +-----------------------+-----------------------------+
 
 
@@ -1013,7 +1071,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+<<<<<<< Updated upstream
     Info: Processing started: Thu Jul 11 12:56:53 2019
+=======
+    Info: Processing started: Tue Jul 16 16:15:19 2019
+>>>>>>> Stashed changes
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1027,10 +1089,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
     Info (12023): Found entity 1: vga_adapter File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 78
 Info (12021): Found 5 design units, including 5 entities, in source file project.v
     Info (12023): Found entity 1: Project File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 3
+<<<<<<< Updated upstream
     Info (12023): Found entity 2: control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 143
     Info (12023): Found entity 3: datapath File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 238
     Info (12023): Found entity 4: rate_divider File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 263
     Info (12023): Found entity 5: hex_display File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 283
+=======
+    Info (12023): Found entity 2: control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 145
+    Info (12023): Found entity 3: datapath File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 262
+    Info (12023): Found entity 4: rate_divider File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 288
+    Info (12023): Found entity 5: hex_display File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 308
+>>>>>>> Stashed changes
 Info (12127): Elaborating entity "Project" for the top level hierarchy
 Warning (10034): Output port "LEDR[9..4]" at Project.v(39) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 68
@@ -1056,6 +1125,10 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60g1.tdf
     Info (12023): Found entity 1: altsyncram_60g1 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_60g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+<<<<<<< Updated upstream
+=======
+Critical Warning (127003): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/black.mif -- setting all initial values to 0 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
+>>>>>>> Stashed changes
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lsa.tdf
     Info (12023): Found entity 1: decode_lsa File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_lsa.tdf Line: 23
 Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 47
@@ -1082,11 +1155,19 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 252
 Info (12128): Elaborating entity "rate_divider" for hierarchy "rate_divider:my_rate_div" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 89
+<<<<<<< Updated upstream
 Info (12128): Elaborating entity "control" for hierarchy "control:my_control" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 105
 Warning (10034): Output port "erase" at Project.v(153) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 153
 Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 118
 Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex4" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 123
 Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+=======
+Info (12128): Elaborating entity "control" for hierarchy "control:my_control" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 106
+Warning (10034): Output port "erase" at Project.v(155) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 155
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 120
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex4" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 125
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+>>>>>>> Stashed changes
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 35
     Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
@@ -1096,6 +1177,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
+<<<<<<< Updated upstream
+=======
+Info (144001): Generated suppressed messages file C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/output_files/Project.map.smsg
+>>>>>>> Stashed changes
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
@@ -1108,6 +1193,7 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 26
+<<<<<<< Updated upstream
 Info (21057): Implemented 370 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 73 output pins
@@ -1119,5 +1205,24 @@ Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
     Info: Processing ended: Thu Jul 11 12:57:13 2019
     Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:41
+=======
+Info (21057): Implemented 373 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 73 output pins
+    Info (21061): Implemented 275 logic cells
+    Info (21064): Implemented 9 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4773 megabytes
+    Info: Processing ended: Tue Jul 16 16:15:43 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:44
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/output_files/Project.map.smsg.
+>>>>>>> Stashed changes
 
 

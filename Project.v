@@ -140,7 +140,67 @@ module Project
 	assign LEDR[3:0] = state;
 endmodule
 
+<<<<<<< Updated upstream
 module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
+=======
+module game_control(clock_rate, clock_30, start, draw);
+	input clock_rate;
+	input clock_30;
+	input start;
+	output draw;
+	output [2:0] colour;
+	output [4:0] x_out;
+	output [4:0] y_out;
+	localparam S_START = 2'b00 , S_LOAD_1 = 2'b01 , S_DRAW_1 = 2'b10, S_PLAY_1 = 2'b11;
+	
+	reg [4:0] counter_x;
+	reg [4:0] counter_y;
+	reg [1:0] current_state;
+	initial current_state = S_START;
+	reg play;
+	wire [4:0] row;
+	wire [4:0] column;
+	
+	reg [2:0] data [0:31][0:23];
+	
+	always @(posedge clock_rate)
+		begin
+			case(current_state)
+				S_START:	begin
+							if (start == 1'b1)
+								current_state <= S_LOAD_1;
+							end
+							
+				S_LOAD_1:	begin
+							draw <= 1'b1;
+							data[15][0] <= 3'b111;
+							counter_x = 1'b0;
+							counter_y = 1'b0;
+							current_state <= S_DRAW_1;
+							end
+				S_DRAW_1:	begin
+							if (clock_30 == 1'b1)
+								if(counter_x < 5'b11111)
+									counter_x <= counter_x + 1'b1;
+								else if(counter_y < 5'b10111)
+									begin
+									counter_x <= 1'b0;
+									end
+								else if (counter_x == 5'b11111 && counter_y == 5'b10111)
+									current_state <= S_PLAY_1;
+				S_PLAY_1:	
+					
+			endcase
+		end
+	assign row = counter_x;
+	assign column = counter_y;
+	
+	assign colour = play ? 3'b111 : data[row][column];
+	assign x_out = 
+endmodule
+
+module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
+>>>>>>> Stashed changes
 	input reset_n;
 	input clock;
 	input draw;
@@ -164,7 +224,13 @@ module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, 
 	initial x0 = 7'd80;
 	initial y0 = 7'd60;
 	
+<<<<<<< Updated upstream
 	always @(posedge clock)
+=======
+	reg [2:0] data [0:32][0:24];
+	
+	always @(posedge draw)
+>>>>>>> Stashed changes
 		begin
 			case(current_state)
 				S_REST:	begin
@@ -211,8 +277,25 @@ module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, 
 	assign x_out = x0;
 	assign y_out = y0;
 	
-	reg [3:0] x;
-	reg [3:0] y;
+	wire [3:0] x;
+	wire [3:0] y;
+	
+	draw my_draw(
+				.clock(clock),
+				.x(x),
+				.y(y)
+				);
+				
+	assign offset_x = x;
+	assign offset_y = y;
+	
+	assign state = current_state;
+endmodule
+
+module draw(clock, x, y);
+	input clock;
+	output reg [3:0] x;
+	output reg [3:0] y;
 	
 	always @(posedge clock)
 		begin
@@ -229,10 +312,6 @@ module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, 
 				y <= 1'b0;
 				end
 		end
-	assign offset_x = x;
-	assign offset_y = y;
-	
-	assign state = current_state;
 endmodule
 
 module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x_out, y_out);
@@ -269,7 +348,7 @@ module rate_divider(clock, out);
 		begin
 			if (num_cycles == 1'b0)
 				begin
-				num_cycles <= 28'b10110111000110101111;
+				num_cycles <= 28'b1011011100011010111;
 				out <= 1'b1;
 				end
 			else
@@ -279,6 +358,26 @@ module rate_divider(clock, out);
 				end
 		end
 endmodule 
+
+module rate_divider30(clock, out);
+	input clock;
+	output reg out;
+	
+	reg [4:0] cycles;
+	always @(posedge clock)
+		begin
+			if (cycles == 1'b0)
+				begin
+				cycles <= 5'11101
+				out <= 1'b1;
+				end
+			else
+				begin
+				cycles <= cycles - 1'b1;
+				out <= 1'b0;
+				end
+		end
+endmodule
 
 module hex_display(IN, OUT);
     input [3:0] IN;
