@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Quartus_Version = Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Version_Index = 486704640
 <<<<<<< Updated upstream
@@ -5,3 +6,8 @@ Creation_Time = Tue Jul 09 16:40:18 2019
 =======
 Creation_Time = Tue Jul 16 16:11:29 2019
 >>>>>>> Stashed changes
+=======
+Quartus_Version = Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Version_Index = 486699264
+Creation_Time = Sun Jul 14 14:14:15 2019
+>>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f

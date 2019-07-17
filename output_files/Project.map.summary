@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 Analysis & Synthesis Status : Successful - Thu Jul 11 12:57:13 2019
 =======
@@ -18,6 +19,17 @@ Total logic elements : 272
     Dedicated logic registers : 101
 Total registers : 101
 >>>>>>> Stashed changes
+=======
+Analysis & Synthesis Status : Successful - Tue Jul 16 14:58:58 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Project
+Top-level Entity Name : Project
+Family : Cyclone IV E
+Total logic elements : 271
+    Total combinational functions : 251
+    Dedicated logic registers : 101
+Total registers : 101
+>>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
 Total pins : 88
 Total virtual pins : 0
 Total memory bits : 57,600

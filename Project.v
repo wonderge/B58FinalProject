@@ -53,7 +53,7 @@ module Project
 	vga_adapter VGA(
 			.resetn(SW[0]),
 			.clock(CLOCK_50),
-			.colour(3'b111),
+			.colour(colour),
 			.x(x),
 			.y(y),
 			.plot(1'b1),
@@ -78,9 +78,9 @@ module Project
 	wire [3:0] offset_y;
 	wire [7:0] x0;
 	wire [6:0] y0;
-	wire color;
 	wire erase;
 	wire start;
+	wire undraw;
 	wire [3:0] state;
 	
 	rate_divider my_rate_div(
@@ -99,6 +99,7 @@ module Project
 					.offset_x(offset_x),
 					.offset_y(offset_y),
 					.erase(erase),
+					.undraw(undraw),
 					.x_out(x0),
 					.y_out(y0),
 					.state(state)
@@ -111,8 +112,9 @@ module Project
 					.offset_x(offset_x),
 					.offset_y(offset_y),
 					.erase(erase),
-					.color_in(1'b0),
-					.color_out(color),
+					.undraw(undraw),
+					.color_in(3'b111),
+					.color_out(colour),
 					.x_out(x),
 					.y_out(y)
 					);
@@ -140,6 +142,7 @@ module Project
 	assign LEDR[3:0] = state;
 endmodule
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 module control(reset_n, clock, draw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
 =======
@@ -201,6 +204,9 @@ endmodule
 
 module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
 >>>>>>> Stashed changes
+=======
+module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, offset_y, erase, x_out, y_out, state);
+>>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
 	input reset_n;
 	input clock;
 	input draw;
@@ -211,9 +217,12 @@ module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, of
 	output [3:0] offset_x;
 	output [3:0] offset_y;
 	output erase;
+	output reg undraw;
 	output [7:0] x_out;
 	output [6:0] y_out;
 	output [3:0] state;
+	
+	initial undraw = 1'b0;
 	
 	localparam S_REST = 4'b0000, S_UP = 4'b1000, S_DOWN = 4'b0100, S_LEFT = 4'b0010, S_RIGHT = 4'b0001;
 	
@@ -221,9 +230,10 @@ module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, of
 	initial current_state = S_REST;
 	reg [7:0] x0;
 	reg [6:0] y0; 
-	initial x0 = 7'd80;
-	initial y0 = 7'd60;
+	initial x0 = 7'd0;
+	initial y0 = 7'd0;
 	
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	always @(posedge clock)
 =======
@@ -231,9 +241,13 @@ module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, of
 	
 	always @(posedge draw)
 >>>>>>> Stashed changes
+=======
+	always @(posedge draw)
+>>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
 		begin
 			case(current_state)
 				S_REST:	begin
+						undraw = 1'b0;
 						if (up == 1'b1)
 							current_state <= S_UP;
 						else if (down == 1'b1)
@@ -245,29 +259,49 @@ module control(reset_n, clock, draw, undraw, up, down, left, right, offset_x, of
 						end
 						
 				S_UP:	begin
-						if (y0 > 1'b0 && draw == 1'b1)
+						if(y0 > 1'b0 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (y0 > 1'b0)
+							begin
 							y0 <= y0 - 1'b1;
+							undraw <= 1'b1;
+							end
 						else if (y0 == 1'b0)
 							current_state <= S_REST;
 						end
 						
 				S_DOWN:	begin
-						if (y0 < 7'b1110010 && draw == 1'b1)
+						if(y0 < 7'b1110010 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (y0 < 7'b1110010)
+							begin
 							y0 <= y0 + 1'b1;
+							undraw <= 1'b1;
+							end
 						else if (y0 == 7'b1110010)
 							current_state <= S_REST;
 						end
 						
 				S_LEFT:	begin
-						if (x0 > 1'b0 && draw == 1'b1)
+						if(x0 > 1'b0 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (x0 > 1'b0)
+							begin
 							x0 <= x0 - 1'b1;
+							undraw <= 1'b1;
+							end
 						else if (x0 == 1'b0)
 							current_state <= S_REST;
 						end
 						
 				S_RIGHT:begin
-						if (x0 < 8'b10011010 && draw == 1'b1)
+						if(x0 < 8'b10011010 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (x0 < 8'b10011010)
+							begin
 							x0 <= x0 + 1'b1;
+							undraw <= 1'b1;
+							end
 						else if (x0 == 8'b10011010)
 							current_state <= S_REST;
 						end
@@ -314,7 +348,7 @@ module draw(clock, x, y);
 		end
 endmodule
 
-module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x_out, y_out);
+module datapath(clock, x0, y0, offset_x, offset_y, erase, undraw, color_in, color_out, x_out, y_out);
 	input clock;
 	input [7:0] x0;
 	input [6:0] y0;
@@ -322,6 +356,7 @@ module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x
 	input [3:0] offset_y;
 	input [2:0] color_in;
 	input erase;
+	input undraw;
 	output [2:0] color_out;
 	output [7:0] x_out;
 	output [6:0] y_out;	
@@ -336,7 +371,7 @@ module datapath(clock, x0, y0, offset_x, offset_y, erase, color_in, color_out, x
 		
 	assign x_out = x + offset_x;
 	assign y_out = y + offset_y;
-	assign color_out = erase ? color_in : 3'b000;
+	assign color_out = undraw ? 3'b000 : color_in;
 endmodule
 
 module rate_divider(clock, out);
