@@ -1,15 +1,6 @@
 Flow report for Project
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-Thu Jul 11 12:58:03 2019
-=======
-Tue Jul 16 16:16:43 2019
->>>>>>> Stashed changes
+Thu Jul 18 12:59:42 2019
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-=======
-Tue Jul 16 14:59:24 2019
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
 
 
 ---------------------
@@ -30,9 +21,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -42,47 +33,25 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-; Flow Status                        ; Successful - Thu Jul 11 12:58:03 2019       ;
-=======
-; Flow Status                        ; Successful - Tue Jul 16 16:16:43 2019       ;
->>>>>>> Stashed changes
+; Flow Status                        ; Successful - Thu Jul 18 12:59:42 2019       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
-=======
-; Flow Status                        ; Successful - Tue Jul 16 14:59:24 2019       ;
-; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
 ; Revision Name                      ; Project                                     ;
 ; Top-level Entity Name              ; Project                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-; Total logic elements               ; 258 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 261 / 114,480 ( < 1 % )                     ;
 ;     Total combinational functions  ; 255 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 100 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 100                                         ;
-=======
-; Total logic elements               ; 256 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 252 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 101 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 101                                         ;
->>>>>>> Stashed changes
-=======
-; Total logic elements               ; 256 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 251 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 101 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 101                                         ;
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
+;     Dedicated logic registers      ; 99 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 99                                          ;
 ; Total pins                         ; 88 / 529 ( 17 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600 / 3,981,312 ( 1 % )                  ;
@@ -96,15 +65,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-; Start date & time ; 07/11/2019 12:56:54 ;
-=======
-; Start date & time ; 07/16/2019 16:15:20 ;
->>>>>>> Stashed changes
-=======
-; Start date & time ; 07/16/2019 14:58:49 ;
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
+; Start date & time ; 07/18/2019 12:58:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Project             ;
 +-------------------+---------------------+
@@ -115,15 +76,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-; COMPILER_SIGNATURE_ID               ; 249164774226282.156286421309256        ; --            ; --          ; --                                ;
-=======
-; COMPILER_SIGNATURE_ID               ; 249164774226282.156330812019184        ; --            ; --          ; --                                ;
->>>>>>> Stashed changes
-=======
-; COMPILER_SIGNATURE_ID               ; 174508023240631.156330352917800        ; --            ; --          ; --                                ;
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
+; COMPILER_SIGNATURE_ID               ; 249164774226282.156346910404640        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -146,30 +99,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 ; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4774 MB             ; 00:00:41                           ;
-; Fitter               ; 00:00:32     ; 1.0                     ; 5695 MB             ; 00:00:47                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4691 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4849 MB             ; 00:00:04                           ;
+; Fitter               ; 00:00:37     ; 1.0                     ; 5757 MB             ; 00:00:51                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4691 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.0                     ; 4852 MB             ; 00:00:05                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4649 MB             ; 00:00:02                           ;
-; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:38                           ;
-=======
-; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4773 MB             ; 00:00:44                           ;
-; Fitter               ; 00:00:40     ; 1.0                     ; 5763 MB             ; 00:00:55                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4691 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 4850 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4649 MB             ; 00:00:02                           ;
-; Total                ; 00:01:15     ; --                      ; --                  ; 00:01:49                           ;
->>>>>>> Stashed changes
-=======
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4818 MB             ; 00:00:20                           ;
-; Fitter               ; 00:00:16     ; 1.0                     ; 5846 MB             ; 00:00:26                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4702 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4892 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4675 MB             ; 00:00:01                           ;
-; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:52                           ;
->>>>>>> 9ae9345ce5f75862b7602a29c030097c795b4d1f
+; Total                ; 00:01:11     ; --                      ; --                  ; 00:01:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -178,11 +113,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-POPM7CI  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-POPM7CI  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-POPM7CI  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-POPM7CI  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-POPM7CI  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; ASUS             ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ASUS             ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ASUS             ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ASUS             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; ASUS             ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

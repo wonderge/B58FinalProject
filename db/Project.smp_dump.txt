@@ -6,3 +6,10 @@ current_state.S_RIGHT 1 0 0 0 1
 current_state.S_LEFT 1 0 0 1 0 
 current_state.S_DOWN 1 0 1 0 0 
 current_state.S_UP 1 1 0 0 0 
+
+State Machine - |Project|game_control:my_game|current_state
+Name current_state.S_PLAY_1 current_state.S_DRAW_1 current_state.S_LOAD_1 current_state.S_START 
+current_state.S_START 0 0 0 0 
+current_state.S_LOAD_1 0 0 1 1 
+current_state.S_DRAW_1 0 1 0 1 
+current_state.S_PLAY_1 1 0 0 1 
