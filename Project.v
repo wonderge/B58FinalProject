@@ -74,8 +74,6 @@ module Project
 	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
 	// for the VGA controller, in addition to any other functionality your design may require.
 	
-	wire [3:0] offset_x;
-	wire [3:0] offset_y;
 	wire [7:0] x0;
 	wire [6:0] y0;
 	wire [7:0] x_in;
@@ -92,7 +90,10 @@ module Project
 						.out(start)
 						);
 						
-	rate_divider30(CLOCK_50, q);
+	rate_divider30 my_rate_div_30(
+							.clock(CLOCK_50), 
+							.out(q)
+							);
 						
 	game_control my_game(
 						.clock_rate(start),
@@ -207,6 +208,7 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 								else if(counter_y < 5'b10111)
 									begin
 									counter_x <= 1'b0;
+									counter_y <= counter_y + 1'b1;
 									end
 								else if (counter_x == 5'b11111 && counter_y == 5'b10111)
 									current_state <= S_PLAY_1;
