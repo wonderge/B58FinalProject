@@ -217,13 +217,13 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 	output reg draw;
 	output [3:0] state;
 	
-	localparam S_START = 3'b000 , S_LOAD_1 = 3'b001, S_LOAD_2 = 3'b010, S_LOAD_3 = 3'b011 , S_DRAW = 3'b100, S_PLAY = 3'b101, S_KEY = 3'b110;
+	localparam S_START = 4'b0000 , S_LOAD_1 = 4'b0001, S_LOAD_2 = 4'b0010, S_LOAD_3 = 4'b0111 , S_DRAW = 4'b0011, S_PLAY = 4'b1011, S_KEY = 3'b110;
 	
 	localparam UP = 4'b1000, DOWN = 4'b0100, LEFT = 4'b0010, RIGHT = 4'b0001;
 	
 	reg [4:0] counter_x;
 	reg [4:0] counter_y;
-	reg [1:0] current_state;
+	reg [3:0] current_state;
 	initial current_state = S_START;
 	//reg play;
 	//wire [4:0] row;
