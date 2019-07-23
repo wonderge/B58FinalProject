@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Project
-Tue Jul 23 18:12:16 2019
-Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+Tue Jul 23 18:56:42 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -15,49 +15,51 @@ Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |Project|draw_control:my_control|current_state
- 10. State Machine - |Project|game_control:my_game|current_state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated
- 16. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 17. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 22. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div30
- 23. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div29
- 24. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div28
- 25. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div24
- 26. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div25
- 27. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div0
- 28. altsyncram Parameter Settings by Entity Instance
- 29. altpll Parameter Settings by Entity Instance
- 30. Port Connectivity Checks: "hex_display:my_hex3"
- 31. Port Connectivity Checks: "hex_display:my_hex2"
- 32. Port Connectivity Checks: "hex_display:my_hex1"
- 33. Port Connectivity Checks: "hex_display:my_hex0"
- 34. Port Connectivity Checks: "hex_display:my_hex7"
- 35. Port Connectivity Checks: "hex_display:my_hex6"
- 36. Port Connectivity Checks: "hex_display:my_hex5"
- 37. Port Connectivity Checks: "hex_display:my_hex4"
- 38. Port Connectivity Checks: "game_control:my_game"
- 39. Port Connectivity Checks: "vga_adapter:VGA"
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Analysis & Synthesis Messages
- 43. Analysis & Synthesis Suppressed Messages
+ 10. State Machine - |Project|game_control:my_game|stage
+ 11. State Machine - |Project|game_control:my_game|current_state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated
+ 18. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 24. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div29
+ 25. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div30
+ 26. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div28
+ 27. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div25
+ 28. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div24
+ 29. Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div0
+ 30. altsyncram Parameter Settings by Entity Instance
+ 31. altpll Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "hex_display:my_hex3"
+ 33. Port Connectivity Checks: "hex_display:my_hex2"
+ 34. Port Connectivity Checks: "hex_display:my_hex1"
+ 35. Port Connectivity Checks: "hex_display:my_hex0"
+ 36. Port Connectivity Checks: "hex_display:my_hex7"
+ 37. Port Connectivity Checks: "hex_display:my_hex6"
+ 38. Port Connectivity Checks: "hex_display:my_hex5"
+ 39. Port Connectivity Checks: "hex_display:my_hex4"
+ 40. Port Connectivity Checks: "game_control:my_game"
+ 41. Port Connectivity Checks: "vga_adapter:VGA"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
+ 45. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -67,23 +69,22 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 23 18:12:16 2019       ;
-; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 23 18:56:42 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Project                                     ;
 ; Top-level Entity Name              ; Project                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 846                                         ;
-;     Total combinational functions  ; 839                                         ;
-;     Dedicated logic registers      ; 110                                         ;
-; Total registers                    ; 110                                         ;
+; Total logic elements               ; 1,015                                       ;
+;     Total combinational functions  ; 1,008                                       ;
+;     Dedicated logic registers      ; 114                                         ;
+; Total registers                    ; 114                                         ;
 ; Total pins                         ; 116                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
@@ -183,63 +184,67 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; vga_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v                  ;         ;
-; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_controller.v           ;         ;
-; vga_address_translator.v         ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_address_translator.v   ;         ;
-; vga_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v              ;         ;
-; Project.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v                  ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                            ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
-; db/altsyncram_60g1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf     ;         ;
-; db/decode_lsa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_lsa.tdf          ;         ;
-; db/decode_e8a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_e8a.tdf          ;         ;
-; db/mux_0nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/mux_0nb.tdf             ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                            ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                       ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                     ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                     ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                        ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                       ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                   ;         ;
-; db/lpm_divide_hhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_hhm.tdf      ;         ;
-; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_9kh.tdf ;         ;
-; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_64f.tdf       ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/add_sub_7pc.tdf         ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/add_sub_8pc.tdf         ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_jhm.tdf      ;         ;
-; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_bkh.tdf ;         ;
-; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_a4f.tdf       ;         ;
-; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_vim.tdf      ;         ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_nlh.tdf ;         ;
-; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_27f.tdf       ;         ;
-; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_ihm.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_84f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; vga_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_pll.v                  ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_controller.v           ;         ;
+; vga_address_translator.v         ; yes             ; User Verilog HDL File        ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_address_translator.v   ;         ;
+; vga_adapter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v              ;         ;
+; Project.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v                  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_60g1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/altsyncram_60g1.tdf     ;         ;
+; db/decode_lsa.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/decode_lsa.tdf          ;         ;
+; db/decode_e8a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/decode_e8a.tdf          ;         ;
+; db/mux_0nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/mux_0nb.tdf             ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                 ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_a4f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_hhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_hhm.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_64f.tdf       ;         ;
+; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_vim.tdf      ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_nlh.tdf ;         ;
+; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_27f.tdf       ;         ;
+; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_ihm.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_84f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -247,20 +252,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 846            ;
+; Estimated Total logic elements              ; 1,015          ;
 ;                                             ;                ;
-; Total combinational functions               ; 839            ;
+; Total combinational functions               ; 1008           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 236            ;
-;     -- 3 input functions                    ; 227            ;
-;     -- <=2 input functions                  ; 376            ;
+;     -- 4 input functions                    ; 372            ;
+;     -- 3 input functions                    ; 246            ;
+;     -- <=2 input functions                  ; 390            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 535            ;
+;     -- normal mode                          ; 704            ;
 ;     -- arithmetic mode                      ; 304            ;
 ;                                             ;                ;
-; Total registers                             ; 110            ;
-;     -- Dedicated logic registers            ; 110            ;
+; Total registers                             ; 114            ;
+;     -- Dedicated logic registers            ; 114            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 116            ;
@@ -272,9 +277,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 90             ;
-; Total fan-out                               ; 3043           ;
-; Average fan-out                             ; 2.55           ;
+; Maximum fan-out                             ; 94             ;
+; Total fan-out                               ; 3666           ;
+; Average fan-out                             ; 2.69           ;
 +---------------------------------------------+----------------+
 
 
@@ -283,11 +288,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Project                                                ; 839 (0)             ; 110 (0)                   ; 57600       ; 0            ; 0       ; 0         ; 116  ; 0            ; |Project                                                                                                                       ; Project                ; work         ;
-;    |datapath:my_datapath|                               ; 29 (23)             ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                                                  ; datapath               ; work         ;
+; |Project                                                ; 1008 (0)            ; 114 (0)                   ; 57600       ; 0            ; 0       ; 0         ; 116  ; 0            ; |Project                                                                                                                       ; Project                ; work         ;
+;    |datapath:my_datapath|                               ; 21 (15)             ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath                                                                                                  ; datapath               ; work         ;
 ;       |draw:my_draw|                                    ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|datapath:my_datapath|draw:my_draw                                                                                     ; draw                   ; work         ;
-;    |draw_control:my_control|                            ; 87 (87)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|draw_control:my_control                                                                                               ; draw_control           ; work         ;
-;    |game_control:my_game|                               ; 508 (152)           ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|game_control:my_game                                                                                                  ; game_control           ; work         ;
+;    |draw_control:my_control|                            ; 99 (99)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|draw_control:my_control                                                                                               ; draw_control           ; work         ;
+;    |game_control:my_game|                               ; 673 (317)           ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|game_control:my_game                                                                                                  ; game_control           ; work         ;
 ;       |lpm_divide:Div0|                                 ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|game_control:my_game|lpm_divide:Div0                                                                                  ; lpm_divide             ; work         ;
 ;          |lpm_divide_vim:auto_generated|                ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|game_control:my_game|lpm_divide:Div0|lpm_divide_vim:auto_generated                                                    ; lpm_divide_vim         ; work         ;
 ;             |sign_div_unsign_nlh:divider|               ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|game_control:my_game|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                        ; sign_div_unsign_nlh    ; work         ;
@@ -361,17 +366,30 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Project|game_control:my_game|current_state                                                                                    ;
-+------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+
-; Name                   ; current_state.S_DRAW ; current_state.S_LOAD_2 ; current_state.S_LOAD_1 ; current_state.S_START ; current_state.S_PLAY ;
-+------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+
-; current_state.S_START  ; 0                    ; 0                      ; 0                      ; 0                     ; 0                    ;
-; current_state.S_LOAD_1 ; 0                    ; 0                      ; 1                      ; 1                     ; 0                    ;
-; current_state.S_LOAD_2 ; 0                    ; 1                      ; 0                      ; 1                     ; 0                    ;
-; current_state.S_DRAW   ; 1                    ; 0                      ; 0                      ; 1                     ; 0                    ;
-; current_state.S_PLAY   ; 0                    ; 0                      ; 0                      ; 1                     ; 1                    ;
-+------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+
++-----------------------------------------------------+
+; State Machine - |Project|game_control:my_game|stage ;
++----------+----------+----------+--------------------+
+; Name     ; stage.11 ; stage.01 ; stage.10           ;
++----------+----------+----------+--------------------+
+; stage.01 ; 0        ; 0        ; 0                  ;
+; stage.10 ; 0        ; 1        ; 1                  ;
+; stage.11 ; 1        ; 1        ; 0                  ;
++----------+----------+----------+--------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Project|game_control:my_game|current_state                                                                                                             ;
++------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+------------------------+
+; Name                   ; current_state.S_DRAW ; current_state.S_LOAD_2 ; current_state.S_LOAD_1 ; current_state.S_START ; current_state.S_PLAY ; current_state.S_LOAD_3 ;
++------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+------------------------+
+; current_state.S_START  ; 0                    ; 0                      ; 0                      ; 0                     ; 0                    ; 0                      ;
+; current_state.S_LOAD_1 ; 0                    ; 0                      ; 1                      ; 1                     ; 0                    ; 0                      ;
+; current_state.S_LOAD_2 ; 0                    ; 1                      ; 0                      ; 1                     ; 0                    ; 0                      ;
+; current_state.S_DRAW   ; 1                    ; 0                      ; 0                      ; 1                     ; 0                    ; 0                      ;
+; current_state.S_LOAD_3 ; 0                    ; 0                      ; 0                      ; 1                     ; 0                    ; 1                      ;
+; current_state.S_PLAY   ; 0                    ; 0                      ; 0                      ; 1                     ; 1                    ; 0                      ;
++------------------------+----------------------+------------------------+------------------------+-----------------------+----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -379,21 +397,353 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------------------+
 ; Register name                           ; Reason for Removal                                 ;
 +-----------------------------------------+----------------------------------------------------+
+; game_control:my_game|data[26][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[26][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[26][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[26][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[26][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[26][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[27][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[28][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[29][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[30][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][1][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][1][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][1][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][2][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][2][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][2][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][3][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][3][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][3][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][4][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][4][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][4][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][5][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][5][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][5][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][6][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][6][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][6][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][7][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][7][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][7][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][8][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][8][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][8][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][9][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][9][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][9][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][10][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][10][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][10][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][11][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][11][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][11][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][12][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][12][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][12][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][13][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][13][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][13][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][14][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][14][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][14][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][15][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][15][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][15][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][16][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][16][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][16][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][17][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][17][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][17][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][18][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][18][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][18][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][19][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][19][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][19][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][20][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][20][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][20][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][21][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][21][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][21][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][22][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][22][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][22][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[31][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[25][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[24][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[23][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[22][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[21][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[20][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[19][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[18][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[17][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][1][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[16][1][1]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[16][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[16][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][1][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][1][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[15][1][2]     ; Stuck at VCC due to stuck port data_in             ;
 ; game_control:my_game|data[15][0][0]     ; Stuck at VCC due to stuck port data_in             ;
 ; game_control:my_game|data[15][0][1]     ; Stuck at VCC due to stuck port data_in             ;
 ; game_control:my_game|data[15][0][2]     ; Stuck at VCC due to stuck port data_in             ;
-; game_control:my_game|data[14][0][0]     ; Stuck at GND due to stuck port data_in             ;
-; game_control:my_game|data[14][0][1]     ; Stuck at GND due to stuck port data_in             ;
-; game_control:my_game|data[13][0][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[14][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][1][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[14][1][1]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[14][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[13][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[13][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[13][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[13][1][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[13][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[13][0][1]     ; Stuck at VCC due to stuck port data_in             ;
 ; game_control:my_game|data[13][0][2]     ; Stuck at VCC due to stuck port data_in             ;
-; game_control:my_game|data[14][0][2]     ; Merged with game_control:my_game|data[13][0][1]    ;
+; game_control:my_game|data[12][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[12][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[12][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[12][1][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[12][1][2]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[12][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[12][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[12][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][1][0]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[11][1][2]     ; Stuck at GND due to stuck port data_in             ;
+; game_control:my_game|data[11][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[11][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][23][0]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][23][1]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][23][2]    ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][0][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][0][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[10][0][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[9][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[8][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[7][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[6][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[5][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[4][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[3][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[2][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[1][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][23][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][23][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][23][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][22][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][22][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][22][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][21][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][21][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][21][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][20][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][20][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][20][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][19][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][19][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][19][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][18][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][18][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][18][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][17][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][17][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][17][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][16][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][16][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][16][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][15][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][15][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][15][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][14][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][14][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][14][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][13][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][13][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][13][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][12][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][12][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][12][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][11][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][11][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][11][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][10][0]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][10][1]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][10][2]     ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][9][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][9][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][9][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][8][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][8][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][8][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][7][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][7][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][7][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][6][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][6][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][6][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][5][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][5][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][5][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][4][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][4][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][4][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][3][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][3][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][3][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][2][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][2][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][2][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][1][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][1][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][1][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][0][0]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][0][1]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[0][0][2]      ; Stuck at VCC due to stuck port data_in             ;
+; game_control:my_game|data[14][1][2]     ; Merged with game_control:my_game|data[13][1][1]    ;
+; game_control:my_game|data[16][1][2]     ; Merged with game_control:my_game|data[12][1][1]    ;
 ; game_control:my_game|current_state~6    ; Lost fanout                                        ;
 ; game_control:my_game|current_state~7    ; Lost fanout                                        ;
-; game_control:my_game|current_state~8    ; Lost fanout                                        ;
+; game_control:my_game|stage.10           ; Merged with game_control:my_game|data[12][1][1]    ;
+; game_control:my_game|stage.11           ; Merged with game_control:my_game|data[11][1][1]    ;
 ; rate_divider30:my_rate_div_30|cycles[0] ; Merged with rate_divider:my_rate_div|num_cycles[0] ;
+; game_control:my_game|stage.01           ; Merged with game_control:my_game|data[13][1][1]    ;
 ; datapath:my_datapath|draw:my_draw|x[3]  ; Stuck at GND due to stuck port data_in             ;
 ; datapath:my_datapath|draw:my_draw|y[3]  ; Stuck at GND due to stuck port data_in             ;
-; Total Number of Removed Registers = 14  ;                                                    ;
+; Total Number of Removed Registers = 346 ;                                                    ;
 +-----------------------------------------+----------------------------------------------------+
 
 
@@ -412,14 +762,28 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 110   ;
-; Number of registers using Synchronous Clear  ; 15    ;
+; Total registers                              ; 114   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Clock Enable       ; 23    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; draw_control:my_control|y0[0]          ; 5       ;
+; draw_control:my_control|y0[2]          ; 7       ;
+; draw_control:my_control|x0[0]          ; 4       ;
+; draw_control:my_control|x0[2]          ; 6       ;
+; game_control:my_game|data[13][1][1]    ; 6       ;
+; Total number of inverted registers = 5 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -427,18 +791,28 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Project|vga_adapter:VGA|vga_controller:controller|yCounter[1]                                             ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|y0[0]                                                                     ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|x0[3]                                                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[2] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Project|vga_adapter:VGA|vga_controller:controller|yCounter[8]                                             ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|y0[3]                                                                     ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|x0[5]                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|y0[2]                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Project|draw_control:my_control|x0[0]                                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[1] ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Project|game_control:my_game|counter_x                                                                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Project|draw_control:my_control|x_out[6]                                                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Project|draw_control:my_control|x_out[2]                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux423                                                                       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux324                                                                       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux216                                                                       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux117                                                                       ;
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Project|draw_control:my_control|y_out[0]                                                                  ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Project|game_control:my_game|Mux80                                                                        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Project|game_control:my_game|Mux67                                                                        ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |Project|game_control:my_game|current_state                                                                ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 6 LEs                ; 16 LEs                 ; No         ; |Project|game_control:my_game|Selector1                                                                    ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 63 LEs               ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux377                                                                       ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; No         ; |Project|game_control:my_game|Mux333                                                                       ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 63 LEs               ; 0 LEs                  ; No         ; |Project|game_control:my_game|Mux276                                                                       ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; No         ; |Project|game_control:my_game|current_state                                                                ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Project|game_control:my_game|current_state                                                                ;
 ; 14:1               ; 5 bits    ; 45 LEs        ; 20 LEs               ; 25 LEs                 ; No         ; |Project|draw_control:my_control|current_state                                                             ;
+; 554:1              ; 2 bits    ; 738 LEs       ; 296 LEs              ; 442 LEs                ; No         ; |Project|game_control:my_game|Mux170                                                                       ;
+; 488:1              ; 2 bits    ; 650 LEs       ; 260 LEs              ; 390 LEs                ; No         ; |Project|game_control:my_game|Mux168                                                                       ;
+; 488:1              ; 2 bits    ; 650 LEs       ; 260 LEs              ; 390 LEs                ; No         ; |Project|game_control:my_game|Mux70                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
 
 
@@ -940,29 +1314,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div30 ;
-+------------------------+----------------+----------------------------------------------+
-; Parameter Name         ; Value          ; Type                                         ;
-+------------------------+----------------+----------------------------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                                      ;
-; LPM_WIDTHD             ; 3              ; Untyped                                      ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
-; LPM_PIPELINE           ; 0              ; Untyped                                      ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
-; CBXI_PARAMETER         ; lpm_divide_hhm ; Untyped                                      ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
-+------------------------+----------------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div29 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
@@ -975,6 +1326,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
 ; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div30 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_hhm ; Untyped                                      ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
@@ -1009,7 +1383,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div24 ;
+; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div25 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
@@ -1032,7 +1406,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div25 ;
+; Parameter Settings for Inferred Entity Instance: game_control:my_game|lpm_divide:Div24 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
@@ -1216,27 +1590,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 116                         ;
-; cycloneiii_ff         ; 110                         ;
+; cycloneiii_ff         ; 114                         ;
 ;     CLR               ; 20                          ;
-;     ENA               ; 7                           ;
-;     ENA SCLR          ; 15                          ;
-;     plain             ; 68                          ;
-; cycloneiii_lcell_comb ; 849                         ;
+;     ENA               ; 23                          ;
+;     plain             ; 71                          ;
+; cycloneiii_lcell_comb ; 1018                        ;
 ;     arith             ; 304                         ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 158                         ;
 ;         3 data inputs ; 144                         ;
-;     normal            ; 545                         ;
+;     normal            ; 714                         ;
 ;         0 data inputs ; 44                          ;
-;         1 data inputs ; 20                          ;
-;         2 data inputs ; 162                         ;
-;         3 data inputs ; 83                          ;
-;         4 data inputs ; 236                         ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 175                         ;
+;         3 data inputs ; 102                         ;
+;         4 data inputs ; 372                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 24.70                       ;
-; Average LUT depth     ; 13.25                       ;
+; Max LUT depth         ; 27.40                       ;
+; Average LUT depth     ; 15.74                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1254,36 +1627,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Tue Jul 23 18:11:52 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jul 23 18:56:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 36
+    Info (12023): Found entity 1: vga_pll File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_pll.v Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 78
 Info (12021): Found 8 design units, including 8 entities, in source file project.v
-    Info (12023): Found entity 1: Project File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 3
-    Info (12023): Found entity 2: game_control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 202
-    Info (12023): Found entity 3: draw_control File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 376
-    Info (12023): Found entity 4: draw File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 520
-    Info (12023): Found entity 5: datapath File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 542
-    Info (12023): Found entity 6: rate_divider File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 567
-    Info (12023): Found entity 7: rate_divider30 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 588
-    Info (12023): Found entity 8: hex_display File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 608
-Warning (10236): Verilog HDL Implicit Net warning at Project.v(150): created implicit net for "erase" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 150
+    Info (12023): Found entity 1: Project File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 3
+    Info (12023): Found entity 2: game_control File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 202
+    Info (12023): Found entity 3: draw_control File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 467
+    Info (12023): Found entity 4: draw File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 611
+    Info (12023): Found entity 5: datapath File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 633
+    Info (12023): Found entity 6: rate_divider File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 658
+    Info (12023): Found entity 7: rate_divider30 File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 679
+    Info (12023): Found entity 8: hex_display File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 699
+Warning (10236): Verilog HDL Implicit Net warning at Project.v(150): created implicit net for "erase" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 150
 Info (12127): Elaborating entity "Project" for the top level hierarchy
-Warning (10034): Output port "LEDR[9..8]" at Project.v(43) has no driver File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 43
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 76
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 213
+Warning (10034): Output port "LEDR[9..8]" at Project.v(43) has no driver File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 43
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 76
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1300,21 +1673,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60g1.tdf
-    Info (12023): Found entity 1: altsyncram_60g1 File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_60g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_60g1 File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/altsyncram_60g1.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_60g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lsa.tdf
-    Info (12023): Found entity 1: decode_lsa File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_lsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 47
+    Info (12023): Found entity 1: decode_lsa File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/decode_lsa.tdf Line: 22
+Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/altsyncram_60g1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_e8a.tdf
-    Info (12023): Found entity 1: decode_e8a File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/decode_e8a.tdf Line: 23
-Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 48
+    Info (12023): Found entity 1: decode_e8a File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/decode_e8a.tdf Line: 22
+Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/altsyncram_60g1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_0nb.tdf
-    Info (12023): Found entity 1: mux_0nb File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/mux_0nb.tdf Line: 23
-Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/altsyncram_60g1.tdf Line: 50
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_0nb File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/mux_0nb.tdf Line: 22
+Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/altsyncram_60g1.tdf Line: 49
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1326,119 +1699,143 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "rate_divider" for hierarchy "rate_divider:my_rate_div" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 105
-Info (12128): Elaborating entity "rate_divider30" for hierarchy "rate_divider30:my_rate_div_30" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 110
-Info (12128): Elaborating entity "game_control" for hierarchy "game_control:my_game" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 129
-Warning (10230): Verilog HDL assignment warning at Project.v(371): truncated value with size 32 to match size of target (8) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 371
-Warning (10230): Verilog HDL assignment warning at Project.v(372): truncated value with size 32 to match size of target (7) File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 372
-Warning (10030): Net "data[13][1..23]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 232
-Warning (10030): Net "data[0..12]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 232
-Warning (10030): Net "data[14][1..23]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 232
-Warning (10030): Net "data[15][1..23]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 232
-Warning (10030): Net "data[16..31]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 232
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "rate_divider" for hierarchy "rate_divider:my_rate_div" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 105
+Info (12128): Elaborating entity "rate_divider30" for hierarchy "rate_divider30:my_rate_div_30" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 110
+Info (12128): Elaborating entity "game_control" for hierarchy "game_control:my_game" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 129
+Warning (10230): Verilog HDL assignment warning at Project.v(462): truncated value with size 32 to match size of target (8) File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 462
+Warning (10230): Verilog HDL assignment warning at Project.v(463): truncated value with size 32 to match size of target (7) File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 463
+Warning (10030): Net "data[1][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[2][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[3][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[4][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[5][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[6][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[7][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[8][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[9][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[10][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[11][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[12][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[13][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[14][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[15][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[16][2..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[17][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[18][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[19][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[20][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[21][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[22][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[23][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[24][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[25][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[26][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[27][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[28][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[29][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
+Warning (10030): Net "data[30][1..22]" at Project.v(232) has no driver or initial value, using a default initial value '0' File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 232
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "data" into its bus
-Info (12128): Elaborating entity "draw_control" for hierarchy "draw_control:my_control" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 144
-Info (10264): Verilog HDL Case Statement information at Project.v(486): all case item expressions in this case statement are onehot File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 486
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 156
-Info (12128): Elaborating entity "draw" for hierarchy "datapath:my_datapath|draw:my_draw" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 560
-Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex4" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 161
+Info (12128): Elaborating entity "draw_control" for hierarchy "draw_control:my_control" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 144
+Info (10264): Verilog HDL Case Statement information at Project.v(577): all case item expressions in this case statement are onehot File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 577
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:my_datapath" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 156
+Info (12128): Elaborating entity "draw" for hierarchy "datapath:my_datapath|draw:my_draw" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 651
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:my_hex4" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 161
 Info (278001): Inferred 6 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div30" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div29" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div28" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 337
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div24" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 318
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div25" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 318
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div0" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 299
-Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div30" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
-Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div30" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
-    Info (12134): Parameter "LPM_WIDTHD" = "3"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
-    Info (12023): Found entity 1: lpm_divide_hhm File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_hhm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_9kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
-    Info (12023): Found entity 1: alt_u_div_64f File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_64f.tdf Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/add_sub_7pc.tdf Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div29" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
-Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div29" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 356
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div29" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div30" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div28" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 416
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div25" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 389
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div24" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 389
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_control:my_game|Div0" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 362
+Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div29" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
+Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div29" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
     Info (12134): Parameter "LPM_WIDTHN" = "9"
     Info (12134): Parameter "LPM_WIDTHD" = "3"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
-    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_jhm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_jhm.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_bkh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_bkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
-    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_a4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div28" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 337
-Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div28" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 337
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_a4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div30" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
+Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div30" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 443
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
+    Info (12023): Found entity 1: lpm_divide_hhm File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_hhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_9kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
+    Info (12023): Found entity 1: alt_u_div_64f File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_64f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div28" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 416
+Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div28" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 416
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "3"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vim.tdf
-    Info (12023): Found entity 1: lpm_divide_vim File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_vim.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_vim File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_vim.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_nlh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_nlh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
-    Info (12023): Found entity 1: alt_u_div_27f File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_27f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div24" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 318
-Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div24" with the following parameter: File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 318
+    Info (12023): Found entity 1: alt_u_div_27f File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_27f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "game_control:my_game|lpm_divide:Div25" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 389
+Info (12133): Instantiated megafunction "game_control:my_game|lpm_divide:Div25" with the following parameter: File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 389
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "3"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
-    Info (12023): Found entity 1: lpm_divide_ihm File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/lpm_divide_ihm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_ihm File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/lpm_divide_ihm.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/sign_div_unsign_akh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
-    Info (12023): Found entity 1: alt_u_div_84f File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/db/alt_u_div_84f.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_84f File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/db/alt_u_div_84f.tdf Line: 26
 Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 39
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 43
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 43
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 43
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 39
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 43
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 43
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/output_files/Project.map.smsg
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/output_files/Project.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 31
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 31
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 31
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 31
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 30
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 30
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 30
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 30
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/Project.v Line: 30
-Info (21057): Implemented 975 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 31
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 31
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 31
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 31
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 30
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 30
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 30
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 30
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 30
+Info (21057): Implemented 1144 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 101 output pins
-    Info (21061): Implemented 849 logic cells
+    Info (21061): Implemented 1018 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Tue Jul 23 18:12:16 2019
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:46
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 4845 megabytes
+    Info: Processing ended: Tue Jul 23 18:56:42 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Winston/Desktop/My Files/2nd year/CSCB58/B58FinalProject/output_files/Project.map.smsg.
+The suppressed messages can be found in C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/output_files/Project.map.smsg.
 
 

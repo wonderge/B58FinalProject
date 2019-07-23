@@ -230,6 +230,9 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 	//wire [4:0] column;
 	
 	reg [2:0] data [0:31][0:23];
+	reg [1:0] stage;
+	integer i;
+	integer j;
 	
 	always @(posedge clock_rate)
 		begin
@@ -244,22 +247,78 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 				S_LOAD_1:	begin
 							play <= 1'b0;
 							draw <= 1'b0;
-							data[15][0] <= 3'b111;
-							data[14][0] <= 3'b100;
-							data[13][0] <= 3'b110;
+							for (i = 0; i < 32; i = i + 1)
+								begin
+								data[i][0] <= 3'b111;
+								data[i][23] <= 3'b111;
+								end
+							
+							for (j = 0; j < 24; j = j + 1)
+								begin
+								data[0][j] <= 3'b111;
+								data[31][j] <= 3'b111;
+								end
+							data[16][1] <= 3'b000;
+							data[15][1] <= 3'b111;
+							data[14][1] <= 3'b100;
+							data[13][1] <= 3'b010;
+							data[12][1] <= 3'b000;
+							data[11][1] <= 3'b000;
 							counter_x <= 1'b0;
 							counter_y <= 1'b0;
+							stage <= 1'b1;
 							current_state <= S_DRAW;
 							end
 				
 				S_LOAD_2:	begin
 							play <= 1'b0;
 							draw <= 1'b0;
-							data[15][0] <= 3'b111;
-							data[14][0] <= 3'b000;
-							data[13][0] <= 3'b100;
+							for (i = 0; i < 32; i = i + 1)
+								begin
+								data[i][0] <= 3'b111;
+								data[i][23] <= 3'b111;
+								end
+							
+							for (j = 0; j < 24; j = j + 1)
+								begin
+								data[0][j] <= 3'b111;
+								data[31][j] <= 3'b111;
+								end
+							data[16][1] <= 3'b100;
+							data[15][1] <= 3'b111;
+							data[14][1] <= 3'b000;
+							data[13][1] <= 3'b100;
+							data[12][1] <= 3'b010;
+							data[11][1] <= 3'b000;
 							counter_x <= 1'b0;
 							counter_y <= 1'b0;
+							stage <= 2'b10;
+							current_state <= S_DRAW;
+							end
+							
+				S_LOAD_3:	begin
+							play <= 1'b0;
+							draw <= 1'b0;
+							for (i = 0; i < 32; i = i + 1)
+								begin
+								data[i][0] <= 3'b111;
+								data[i][23] <= 3'b111;
+								end
+							
+							for (j = 0; j < 24; j = j + 1)
+								begin
+								data[0][j] <= 3'b111;
+								data[31][j] <= 3'b111;
+								end
+							data[16][1] <= 3'b000;
+							data[15][1] <= 3'b111;
+							data[14][1] <= 3'b000;
+							data[13][1] <= 3'b100;
+							data[12][1] <= 3'b000;
+							data[11][1] <= 3'b010;
+							counter_x <= 1'b0;
+							counter_y <= 1'b0;
+							stage <= 2'b11;
 							current_state <= S_DRAW;
 							end
 							
@@ -294,13 +353,21 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_1;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_1;
+										2'b10:	current_state <= S_LOAD_2;
+										2'b11:	current_state <= S_LOAD_3;
+									endcase
 									end
-								else if (data[player_x / 5][(player_y - 1) / 5] == 3'b110)
+								else if (data[player_x / 5][(player_y - 1) / 5] == 3'b010)
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_2;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_2;
+										2'b10:	current_state <= S_LOAD_3;
+										2'b11:	current_state <= S_LOAD_1;
+									endcase
 									end
 								end
 								
@@ -313,13 +380,21 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_1;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_1;
+										2'b10:	current_state <= S_LOAD_2;
+										2'b11:	current_state <= S_LOAD_3;
+									endcase
 									end
-								else if (data[player_x / 5][(player_y + 5) / 5] == 3'b110)
+								else if (data[player_x / 5][(player_y + 5) / 5] == 3'b010)
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_2;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_2;
+										2'b10:	current_state <= S_LOAD_3;
+										2'b11:	current_state <= S_LOAD_1;
+									endcase
 									end
 								end
 							
@@ -332,13 +407,21 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_1;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_1;
+										2'b10:	current_state <= S_LOAD_2;
+										2'b11:	current_state <= S_LOAD_3;
+									endcase
 									end
-								else if (data[(player_x - 1) / 5][player_y / 5] == 3'b110)
+								else if (data[(player_x - 1) / 5][player_y / 5] == 3'b010)
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_2;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_2;
+										2'b10:	current_state <= S_LOAD_3;
+										2'b11:	current_state <= S_LOAD_1;
+									endcase
 									end
 								end
 							
@@ -351,13 +434,21 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_1;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_1;
+										2'b10:	current_state <= S_LOAD_2;
+										2'b11:	current_state <= S_LOAD_3;
+									endcase
 									end
-								else if (data[(player_x + 5) / 5][player_y / 5] == 3'b110)
+								else if (data[(player_x + 5) / 5][player_y / 5] == 3'b010)
 									begin
 									stop <= 1'b1;
 									reset <= 1'b1;
-									current_state <= S_LOAD_2;
+									case(stage)
+										2'b01:	current_state <= S_LOAD_2;
+										2'b10:	current_state <= S_LOAD_3;
+										2'b11:	current_state <= S_LOAD_1;
+									endcase
 									end
 								end
 							else
@@ -367,7 +458,7 @@ module game_control(clock_rate, clock_30, start, player_x, player_y, direction, 
 		end
 	assign row = counter_x;
 	assign column = counter_y;
-	assign colour = play ? 3'b111 : data[row][column];
+	assign colour = play ? 3'b001 : data[row][column];
 	assign x_out = play ? player_x : row * 5;
 	assign y_out = play ? player_y : column * 5;
 	assign state = current_state;
@@ -395,15 +486,15 @@ module draw_control(reset_n, clock, draw, undraw, up, down, left, right, stop, x
 	initial current_state = S_REST;
 	reg [7:0] x0;
 	reg [6:0] y0; 
-	initial x0 = 7'd0;
-	initial y0 = 7'd0;
+	initial x0 = 7'd5;
+	initial y0 = 7'd5;
 	
 	always @(posedge clock)
 		begin
 			if (reset_n == 1'b1)
 				begin
-				x0 <= 1'b0;
-				y0 <= 1'b0;
+				x0 <= 3'b101;
+				y0 <= 3'b101;
 				current_state <= S_REST;
 				end
 			

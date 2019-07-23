@@ -7,10 +7,17 @@ current_state.S_LEFT 1 0 0 1 0
 current_state.S_DOWN 1 0 1 0 0 
 current_state.S_UP 1 1 0 0 0 
 
+State Machine - |Project|game_control:my_game|stage
+Name stage.11 stage.01 stage.10 
+stage.01 0 0 0 
+stage.10 0 1 1 
+stage.11 1 1 0 
+
 State Machine - |Project|game_control:my_game|current_state
-Name current_state.S_DRAW current_state.S_LOAD_2 current_state.S_LOAD_1 current_state.S_START current_state.S_PLAY 
-current_state.S_START 0 0 0 0 0 
-current_state.S_LOAD_1 0 0 1 1 0 
-current_state.S_LOAD_2 0 1 0 1 0 
-current_state.S_DRAW 1 0 0 1 0 
-current_state.S_PLAY 0 0 0 1 1 
+Name current_state.S_DRAW current_state.S_LOAD_2 current_state.S_LOAD_1 current_state.S_START current_state.S_PLAY current_state.S_LOAD_3 
+current_state.S_START 0 0 0 0 0 0 
+current_state.S_LOAD_1 0 0 1 1 0 0 
+current_state.S_LOAD_2 0 1 0 1 0 0 
+current_state.S_DRAW 1 0 0 1 0 0 
+current_state.S_LOAD_3 0 0 0 1 0 1 
+current_state.S_PLAY 0 0 0 1 1 0 
