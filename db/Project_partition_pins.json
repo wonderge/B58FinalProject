@@ -152,127 +152,123 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[0]",
+					"name" : "LEDR[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[1]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[2]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[3]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[4]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[5]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[6]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[0]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[1]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[2]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[3]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[4]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[5]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[6]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[0]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[1]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[2]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[3]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[4]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[5]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX6[6]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[0]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[1]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[2]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[3]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[4]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[5]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX7[6]",
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
 					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
@@ -281,6 +277,14 @@
 				},
 				{
 					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
