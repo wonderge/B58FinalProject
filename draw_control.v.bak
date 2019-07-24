@@ -1,0 +1,143 @@
+module draw_control(reset_n, clock, draw, undraw, up, down, left, right, stop, x_out, y_out, state);
+	input reset_n;
+	input clock;
+	input draw;
+	input up;
+	input down;
+	input left;
+	input right;
+	input stop;
+	output reg undraw;
+	output reg [7:0] x_out;
+	output reg [6:0] y_out;
+	output [3:0] state;
+	
+	initial undraw = 1'b0;
+	
+	localparam S_REST = 4'b0000, S_UP = 4'b1000, S_DOWN = 4'b0100, S_LEFT = 4'b0010, S_RIGHT = 4'b0001;
+	
+	reg [3:0] current_state;
+	initial current_state = S_REST;
+	reg [7:0] x0;
+	reg [6:0] y0; 
+	initial x0 = 7'd5;
+	initial y0 = 7'd5;
+	
+	always @(posedge clock)
+		begin
+			if (reset_n == 1'b1)
+				begin
+				x0 <= 3'b101;
+				y0 <= 3'b101;
+				current_state <= S_REST;
+				end
+			
+			if (draw == 1'b1)
+				case(current_state)
+				S_REST:	begin
+						undraw = 1'b0;
+						if (up == 1'b1)
+							current_state <= S_UP;
+						else if (down == 1'b1)
+							current_state <= S_DOWN;
+						else if (left == 1'b1)
+							current_state <= S_LEFT;
+						else if (right == 1'b1)
+							current_state <= S_RIGHT;
+						end
+						
+				S_UP:	begin
+						if (stop == 1'b1)
+							current_state <= S_REST;
+						else if (y0 > 1'b0 && undraw == 1'b1 && stop == 1'b0)
+							undraw <= 1'b0;
+						else if (y0 > 1'b0 && stop == 1'b0)
+							begin
+							y0 <= y0 - 1'b1;
+							undraw <= 1'b1;
+							end
+						else if (y0 == 1'b0)
+							current_state <= S_REST;
+						end
+						
+				S_DOWN:	begin
+						if (stop == 1'b1)
+							current_state <= S_REST;
+						else if (y0 < 7'b1110010 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (y0 < 7'b1110010)
+							begin
+							y0 <= y0 + 1'b1;
+							undraw <= 1'b1;
+							end
+						else if (y0 == 7'b1110010)
+							current_state <= S_REST;
+						end
+						
+				S_LEFT:	begin
+						if (stop == 1'b1)
+							current_state <= S_REST;
+						else if (x0 > 1'b0 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (x0 > 1'b0)
+							begin
+							x0 <= x0 - 1'b1;
+							undraw <= 1'b1;
+							end
+						else if (x0 == 1'b0)
+							current_state <= S_REST;
+						end
+						
+				S_RIGHT:begin
+						if (stop == 1'b1)
+							current_state <= S_REST;
+						else if (x0 < 8'b10011010 && undraw == 1'b1)
+							undraw <= 1'b0;
+						else if (x0 < 8'b10011010)
+							begin
+							x0 <= x0 + 1'b1;
+							undraw <= 1'b1;
+							end
+						else if (x0 == 8'b10011010)
+							current_state <= S_REST;
+						end
+				default:current_state <= S_REST;
+				endcase
+		end
+	
+	always @(*)
+		begin
+			if (undraw == 1'b1)
+				case(current_state)
+					S_UP: 	begin
+							y_out <= y0 + 1'b1;
+							x_out <= x0;
+							end
+							
+					S_DOWN: begin
+							y_out <= y0 - 1'b1;
+							x_out <= x0;
+							end
+							
+					S_LEFT: begin
+							x_out <= x0 + 1'b1;
+							y_out <= y0;
+							end
+							
+					S_RIGHT:begin
+							x_out <= x0 - 1'b1;
+							y_out <= y0;
+							end
+					default:begin
+							x_out <= x0;
+							y_out <= y0;
+							end
+				endcase
+			else
+				begin
+				x_out <= x0;
+				y_out <= y0;
+				end
+		end	
+	assign state = current_state;
+endmodule

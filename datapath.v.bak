@@ -1,0 +1,45 @@
+module datapath(clock, x0, y0, erase, undraw, color_in, color_out, x_out, y_out);
+	input clock;
+	input [7:0] x0;
+	input [6:0] y0;
+	input [2:0] color_in;
+	input erase;
+	input undraw;
+	output [2:0] color_out;
+	output [7:0] x_out;
+	output [6:0] y_out;	
+		
+	wire [3:0] x;
+	wire [3:0] y;
+	
+	draw my_draw(
+				.clock(clock),
+				.x(x),
+				.y(y)
+				);
+		
+	assign x_out = x0 + x;
+	assign y_out = y0 + y;
+	assign color_out = undraw ? 3'b000 : color_in;
+endmodule
+
+module rate_divider(clock, out);
+	input clock;
+	output reg out;
+	
+	reg [27:0] num_cycles;
+	always @(posedge clock)
+		begin
+			if (num_cycles == 1'b0)
+				begin
+				num_cycles <= 28'b1011011100011010111;
+				//num_cycles <= 28'b101111110111111101101111;
+				out <= 1'b1;
+				end
+			else
+				begin
+				num_cycles <= num_cycles - 1'b1;
+				out <= 1'b0;
+				end
+		end
+endmodule 
