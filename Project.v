@@ -43,7 +43,7 @@ module Project
 	output  [6:0]   HEX7;
 	
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
-	wire [2:0] colour;
+	wire [5:0] colour;
 	wire [7:0] x;
 	wire [6:0] y;
 
@@ -68,7 +68,7 @@ module Project
 			.VGA_CLK(VGA_CLK));
 		defparam VGA.RESOLUTION = "160x120";
 		defparam VGA.MONOCHROME = "FALSE";
-		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
+		defparam VGA.BITS_PER_COLOUR_CHANNEL = 2;
 		defparam VGA.BACKGROUND_IMAGE = "black.mif";
 			
 	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
@@ -88,8 +88,8 @@ module Project
 	//wire [3:0] game_state;
 	//wire [4:0] row;
 	//wire [4:0] column;
-	//wire [3:0] state;
-	wire [2:0] color_in;
+	wire [3:0] state;
+	wire [5:0] color_in;
 	
 	rate_divider my_rate_div(
 						.clock(CLOCK_50),
@@ -121,12 +121,13 @@ module Project
 						.clock_rate(clock_rate),
 						.up(SW[3]),
 						.down(SW[2]),
-						.left(SW[2]),
+						.left(SW[1]),
 						.right(SW[0]),
 						.stop(stop),
 						.undraw(undraw),
 						.x_out(x0),
-						.y_out(y0)
+						.y_out(y0),
+						.state(state)
 						);
 	
 	datapath my_datapath(

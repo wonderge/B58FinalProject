@@ -1,4 +1,4 @@
-module draw_control(reset_n, clock, clock_rate, undraw, up, down, left, right, stop, x_out, y_out);
+module draw_control(reset_n, clock, clock_rate, undraw, up, down, left, right, stop, x_out, y_out, state);
 	input reset_n;
 	input clock;
 	input clock_rate;
@@ -10,6 +10,7 @@ module draw_control(reset_n, clock, clock_rate, undraw, up, down, left, right, s
 	output reg undraw;
 	output reg [7:0] x_out;
 	output reg [6:0] y_out;
+	output [3:0] state;
 	
 	initial undraw = 1'b0;
 	
@@ -138,4 +139,5 @@ module draw_control(reset_n, clock, clock_rate, undraw, up, down, left, right, s
 				y_out <= y0;
 				end
 		end	
+	assign state = current_state;
 endmodule 

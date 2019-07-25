@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at Project.v(492): always construct contains both blocking and non-blocking assignments File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/Project.v Line: 492
+Warning (10268): Verilog HDL information at draw_control.v(26): always construct contains both blocking and non-blocking assignments File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/draw_control.v Line: 26
+Warning (10268): Verilog HDL information at game_control.v(64): always construct contains both blocking and non-blocking assignments File: C:/Users/Tony Xu/Documents/CSCB58/Final_Project/B58FinalProject/game_control.v Line: 64
