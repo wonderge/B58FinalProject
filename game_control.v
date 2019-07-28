@@ -286,6 +286,264 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, colou
 								data[0][j] <= WALL;
 								data[31][j] <= WALL;
 								end
+							
+							//Row 1
+							data[5][1] <= TRAP;
+							data[6][1] <= WALL;
+							data[7][1] <= WALL;
+							data[8][1] <= WALL;
+							goal_x <= 8;
+							goal_y <= 1;
+							data[9][1] <= WALL;
+							data[10][1] <= WALL;
+							data[11][1] <= WALL;
+							data[12][1] <= WALL;
+							data[13][1] <= WALL;
+							data[14][1] <= WALL;
+							data[15][1] <= WALL;
+							data[16][1] <= WALL;
+							data[17][1] <= WALL;
+							data[18][1] <= WALL;
+							data[19][1] <= WALL;
+							data[20][1] <= WALL;
+							data[21][1] <= WALL;
+							data[22][1] <= WALL;
+							data[23][1] <= WALL;
+							data[24][1] <= WALL;
+							data[25][1] <= WALL;
+							data[26][1] <= WALL;
+							data[27][1] <= WALL;
+							data[28][1] <= WALL;
+							data[29][1] <= WALL;
+							data[30][1] <= WALL;
+							//Row 2
+							data[7][2] <= WALL;
+							data[11][2] <= WALL;
+							data[16][2][ <= L_WALL;
+							data[20][2] <= WALL;
+							data[24][2] <= WALL;
+							data[30][2] <= TRAP;
+							//Row 3
+							data[1][3] <= WALL;
+							data[2][3] <= WALL;
+							data[3][3] <= WALL;
+							data[4][3] <= WALL;
+							data[5][3] <= WALL;
+							data[7][3] <= WALL;
+							data[11][3] <= WALL;
+							data[16][3] <= WALL;
+							data[20][3] <= WALL;
+							data[24][3] <= WALL;
+							//Row 4
+							data[1][4] <= TRAP;
+							data[2][4] <= TRAP;
+							data[3][4] <= TRAP;
+							data[4][4] <= TRAP;
+							data[5][4] <= WALL;
+							data[7][4] <= WALL;
+							data[11][4] <= WALL;
+							data[16][4] <= WALL;
+							data[20][4] <= WALL;
+							data[24][4] <= WALL;
+							//Row 5
+							data[1][5] <= TRAP;
+							data[4][5] <= TRAP;
+							data[5][5] <= WALL;
+							data[7][5] <= WALL;
+							data[11][5] <= WALL;
+							data[16][5] <= WALL;
+							data[20][5] <= WALL;
+							data[24][5] <= WALL;
+							//Row 6
+							data[1][6] <= TRAP;
+							data[4][6] <= TRAP;
+							data[7][6] <= WALL;
+							data[11][6] <= WALL;
+							data[15][6] <= WALL;
+							data[16][6] <= WALL;
+							data[20][6] <= WALL;
+							data[24][6] <= WALL;
+							//Row 7
+							data[5][7] <= L_WALL;
+							data[7][7] <= WALL;
+							data[16][7] <= R_WALL;
+							data[20][7] <= WALL;
+							data[24][7] <= WALL;
+							data[25][7] <= WALL;
+							//Row 8
+							data[4][8] <= TRAP;
+							data[5][8] <= WALL;
+							data[6][8] <= WALL;
+							data[7][8] <= WALL;
+							data[8][8] <= WALL;
+							data[9][8] <= WALL;
+							data[10][8] <= WALL;
+							data[11][8] <= WALL;
+							data[12][8] <= TRAP;
+							data[13][8] <= WALL;
+							data[14][8] <= WALL;
+							data[15][8] <= U_WALL;
+							data[16][8] <= WALL;
+							data[17][8] <= U_WALL;
+							data[22][8] <= WALL;
+							data[27][8] <= WALL;
+							//Row 9
+							data[4][9] <= TRAP;
+							data[5][9] <= WALL;
+							data[6][9] <= TRAP;
+							data[8][9] <= WALL;
+							data[13][9] <= WALL;
+							data[16][9] <= WALL;
+							data[18][9] <= WALL;
+							data[19][9] <= WALL;
+							data[20][9] <= WALL;
+							data[21][9] <= WALL;
+							data[22][9] <= WALL;
+							data[23][9] <= WALL;
+							data[24][9] <= WALL;
+							data[25][9] <= WALL;
+							data[26][9] <= WALL;
+							data[27][9] <= WALL;
+							data[28][9] <= WALL;
+							data[29][9] <= WALL;
+							data[30][9] <= D_WALL;
+							//Row 10
+							data[4][10] <= TRAP;
+							data[5][10] <= WALL;
+							data[6][10] <= TRAP;
+							data[8][10] <= WALL;
+							data[13][10] <= WALL;
+							data[16][10] <= WALL;
+							data[23][10] <= WALL;
+							//Row 11
+							data[4][11] <= TRAP;
+							data[5][11] <= WALL;
+							data[6][11] <= TRAP;
+							data[8][11] <= WALL;
+							data[13][11] <= WALL;
+							data[16][11] <= WALL;
+							data[23][11] <= WALL;
+							//Row 12
+							data[4][12] <= TRAP;
+							data[5][12] <= WALL;
+							data[6][12] <= TRAP;
+							data[8][12] <= WALL;
+							data[13][12] <= WALL;
+							data[16][12] <= WALL;
+							data[23][12] <= WALL;
+							//Row 13
+							data[4][13] <= TRAP;
+							data[5][13] <= WALL;
+							data[6][13] <= TRAP;
+							data[8][13] <= WALL;
+							data[13][13] <= WALL;
+							data[16][13] <= WALL;
+							data[23][13] <= WALL;
+							//Row 14
+							data[5][14] <= R_WALL;
+							data[8][14] <= WALL;
+							data[16][14] <= WALL;
+							//Row 15
+							data[1][15] <= WALL;
+							data[2][15] <= WALL;
+							data[3][15] <= WALL;
+							data[4][15] <= WALL;
+							data[5][15] <= WALL;
+							data[6][15] <= WALL;
+							data[7][15] <= WALL;
+							data[8][15] <= WALL;
+							data[9][15] <= WALL;
+							data[10][15] <= WALL;
+							data[11][15] <= WALL;
+							data[12][15] <= WALL;
+							data[13][15] <= WALL;
+							data[14][15] <= WALL;
+							data[15][15] <= WALL;
+							data[16][15] <= WALL;
+							data[17][15] <= TRAP;
+							data[18][15] <= TRAP;
+							data[19][15] <= TRAP;
+							data[20][15] <= TRAP;
+							data[21][15] <= TRAP;
+							data[22][15] <= TRAP;
+							data[23][15] <= TRAP;
+							data[24][15] <= WALL;
+							data[25][15] <= TRAP;
+							data[26][15] <= TRAP;
+							data[27][15] <= TRAP;
+							data[28][15] <= TRAP;
+							data[29][15] <= TRAP;
+							//Row 16
+							data[11][16] <= R_WALL;
+							//Row 17
+							data[3][17] <= WALL;
+							data[4][17] <= WALL;
+							data[5][17] <= WALL;
+							data[6][17] <= WALL;
+							data[7][17] <= WALL;
+							data[8][17] <= WALL;
+							data[9][17] <= WALL;
+							data[10][17] <= WALL;
+							data[11][17] <= WALL;
+							data[13][17] <= WALL;
+							data[14][17] <= WALL;
+							data[15][17] <= WALL;
+							data[16][17] <= WALL;
+							data[17][17] <= WALL;
+							data[18][17] <= WALL;
+							data[19][17] <= WALL;
+							data[20][17] <= WALL;
+							data[21][17] <= WALL;
+							data[22][17] <= WALL;
+							data[23][17] <= WALL;
+							data[24][17] <= WALL;
+							data[25][17] <= WALL;
+							data[26][17] <= WALL;
+							data[27][17] <= WALL;
+							data[28][17] <= WALL;
+							data[29][17] <= WALL;
+							data[30][17] <= WALL;
+							//Row 18
+							data[8][18] <= WALL;
+							data[26][18] <= WALL;
+							//Row 19
+							data[1][19] <= WALL;
+							data[17][19] <= WALL;
+							//Row 20
+							data[1][20] <= WALL;
+							data[2][20] <= WALL;
+							data[3][20] <= WALL;
+							data[4][20] <= WALL;
+							data[5][20] <= WALL;
+							data[6][20] <= WALL;
+							data[7][20] <= WALL;
+							data[8][20] <= WALL;
+							data[9][20] <= WALL;
+							data[10][20] <= WALL;
+							data[11][20] <= WALL;
+							data[13][20] <= WALL;
+							data[14][20] <= WALL;
+							data[15][20] <= WALL;
+							data[16][20] <= WALL;
+							data[17][20] <= WALL;
+							data[18][20] <= WALL;
+							data[19][20] <= WALL;
+							data[20][20] <= WALL;
+							data[21][20] <= WALL;
+							data[22][20] <= WALL;
+							data[23][20] <= WALL;
+							data[24][20] <= WALL;
+							data[25][20] <= WALL;
+							data[26][20] <= WALL;
+							data[27][20] <= WALL;
+							data[28][20] <= WALL;
+							data[29][20] <= WALL;
+							//Row 21
+							data[29][21] <= WALL;
+							//Row 22
+							data[29][22] <= WALL;
+							key_x <= 30;
+							key_y <= 22;
 							counter_x <= 1'b0;
 							counter_y <= 1'b0;
 							stage <= 2'b10;
@@ -340,6 +598,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, colou
 									data[player_x / 5][(player_y - 1) / 5] == D_WALL)
 									begin
 									stop <= 1'b1;
+									end
+								if (data[player_x / 5][(player_y + 5) / 5] == U_WALL)
+									begin
+									stop <= 1'b1;
 									counter_x = 1'b0;
 									counter_y = 1'b0;
 									current_state = S_DRAW;
@@ -374,6 +636,11 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, colou
 								    data[player_x / 5][(player_y + 5) / 5] == U_WALL |
 									data[player_x / 5][(player_y + 5) / 5] == L_WALL |
 									data[player_x / 5][(player_y + 5) / 5] == R_WALL)
+									begin
+									stop <= 1'b1;
+									end
+									
+								if (data[player_x / 5][(player_y - 1) / 5] == D_WALL)
 									begin
 									stop <= 1'b1;
 									counter_x = 1'b0;
@@ -411,6 +678,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, colou
 									data[(player_x - 1) / 5][player_y / 5] == R_WALL)
 									begin
 									stop <= 1'b1;
+									end
+								
+								if (data[(player_x + 5) / 5][player_y / 5] == L_WALL)
+									begin
 									counter_x = 1'b0;
 									counter_y = 1'b0;
 									current_state = S_DRAW;
@@ -446,6 +717,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, colou
 									data[(player_x + 5) / 5][player_y / 5] == L_WALL)
 									begin
 									stop <= 1'b1;
+									end
+									
+								if (data[(player_x - 1) / 5][player_y / 5] == R_WALL)
+									begin
 									counter_x = 1'b0;
 									counter_y = 1'b0;
 									current_state = S_DRAW;
