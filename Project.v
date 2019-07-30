@@ -108,6 +108,7 @@ module Project
 						.player_x(x0),
 						.player_y(y0),
 						.direction(state),
+						.show_door(SW[9]),
 						.colour(color_in),
 						.x_out(x_in),
 						.y_out(y_in),
