@@ -36,13 +36,14 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 	reg [4:0] counter_x;
 	reg [4:0] counter_y;
 	reg [3:0] current_state;
-	initial current_state = S_LOAD_1;
+	initial current_state = S_LOAD_3;
 	reg play;
 	wire [4:0] row;
 	wire [4:0] column;
 	
 	reg [5:0] data [0:31][0:23];
 	reg [1:0] stage;
+	initial stage = 2'b11;
 	
 	//Used when level needs a key
 	reg [4:0] key_x;
@@ -320,7 +321,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							//Row 2
 							data[7][2] <= WALL;
 							data[11][2] <= WALL;
-							data[16][2][ <= L_WALL;
+							data[16][2] <= L_WALL;
 							data[20][2] <= WALL;
 							data[24][2] <= WALL;
 							data[30][2] <= TRAP;
@@ -358,6 +359,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							//Row 6
 							data[1][6] <= TRAP;
 							data[4][6] <= TRAP;
+							data[5][6] <= WALL;
 							data[7][6] <= WALL;
 							data[11][6] <= WALL;
 							data[15][6] <= WALL;
@@ -380,7 +382,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[9][8] <= WALL;
 							data[10][8] <= WALL;
 							data[11][8] <= WALL;
-							data[12][8] <= TRAP;
+							data[12][8] <= WALL;
 							data[13][8] <= WALL;
 							data[14][8] <= WALL;
 							data[15][8] <= U_WALL;
@@ -392,7 +394,6 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[4][9] <= TRAP;
 							data[5][9] <= WALL;
 							data[6][9] <= TRAP;
-							data[8][9] <= WALL;
 							data[13][9] <= WALL;
 							data[16][9] <= WALL;
 							data[18][9] <= WALL;
@@ -497,7 +498,6 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[21][17] <= WALL;
 							data[22][17] <= WALL;
 							data[23][17] <= WALL;
-							data[24][17] <= WALL;
 							data[25][17] <= WALL;
 							data[26][17] <= WALL;
 							data[27][17] <= WALL;
@@ -522,6 +522,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[9][20] <= WALL;
 							data[10][20] <= WALL;
 							data[11][20] <= WALL;
+							data[12][20] <= WALL;
 							data[13][20] <= WALL;
 							data[14][20] <= WALL;
 							data[15][20] <= WALL;
@@ -543,6 +544,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[29][21] <= WALL;
 							//Row 22
 							data[29][22] <= WALL;
+							data[30][22] <= KEY;
 							key_x <= 30;
 							key_y <= 22;
 							counter_x <= 1'b0;
@@ -646,15 +648,15 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[18][6] = WALL;
 							data[22][6] = WALL;
 							data[26][6] = WALL;
-							data[27][6] = WALL;
+							data[29][6] = WALL;
 							data[30][6] = WALL;
 							//Row 7
 							key_x = 1;
 							key_y = 7;
+							data[1][7] = KEY;
 							data[2][7] = WALL;
 							data[3][7] = TRAP;
 							data[5][7] = WALL;
-							data[7][7] = WALL;
 							data[9][7] = WALL;
 							data[10][7] = WALL;
 							data[12][7] = TRAP;
@@ -665,7 +667,6 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[17][7] = TRAP;
 							data[18][7] = WALL;
 							data[22][7] = WALL;
-							data[27][7] = WALL;
 							data[30][7] = WALL;
 							//Row 8
 							data[2][8] = WALL;
@@ -799,6 +800,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[21][20] = WALL;
 							data[22][20] = WALL;
 							data[23][20] = WALL;
+							data[24][20] = WALL;
 							data[25][20] = WALL;
 							data[26][20] = WALL;
 							data[27][20] = WALL;
@@ -818,9 +820,9 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 							data[6][22] = WALL;
 							data[10][22] = WALL;
 							data[16][22] = WALL;
-							data[21][22] = WALL;
-							data[25][22] = WALL;
-							data[29][22] = WALL;
+							data[21][22] = R_WALL;
+							data[25][22] = R_WALL;
+							data[29][22] = R_WALL;
 							
 							counter_x <= 1'b0;
 							counter_y <= 1'b0;
@@ -857,12 +859,9 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 									data[player_x / 5][(player_y - 1) / 5] == D_WALL)
 									begin
 									stop <= 1'b1;
-									end
-								if (data[player_x / 5][(player_y + 5) / 5] == U_WALL && show_door == 1'b1)
-									begin
-									counter_x = 1'b0;
-									counter_y = 1'b0;
-									current_state = S_DRAW;
+									counter_x <= 1'b0;
+									counter_y <= 1'b0;
+									current_state <= S_DRAW;
 									end
 								//If player touches trap	
 								else if (data[player_x / 5][(player_y - 1) / 5] == TRAP)
@@ -882,6 +881,7 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 									reset <= 1'b1;
 									current_state <= S_CLEAR;
 									end
+								//If player gets key
 								else if (data[player_x / 5][(player_y - 1) / 5] == KEY)
 									begin
 									current_state <= S_KEY;
@@ -896,16 +896,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 									data[player_x / 5][(player_y + 5) / 5] == R_WALL)
 									begin
 									stop <= 1'b1;
-									end
-									
-								if (data[player_x / 5][(player_y - 1) / 5] == D_WALL && show_door == 1'b1)
-									begin
-									stop <= 1'b1;
-									counter_x = 1'b0;
-									counter_y = 1'b0;
-									current_state = S_DRAW;
-									end
-									
+									counter_x <= 1'b0;
+									counter_y <= 1'b0;
+									current_state <= S_DRAW;
+									end									
 								else if (data[player_x / 5][(player_y + 5) / 5] == TRAP)
 									begin
 									stop <= 1'b1;
@@ -936,15 +930,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 									data[(player_x - 1) / 5][player_y / 5] == R_WALL)
 									begin
 									stop <= 1'b1;
+									counter_x <= 1'b0;
+									counter_y <= 1'b0;
+									current_state <= S_DRAW;
 									end
-								
-								if (data[(player_x + 5) / 5][player_y / 5] == L_WALL && show_door == 1'b1)
-									begin
-									counter_x = 1'b0;
-									counter_y = 1'b0;
-									current_state = S_DRAW;
-									end
-									
 								else if (data[(player_x - 1) / 5][player_y / 5] == TRAP)
 									begin
 									stop <= 1'b1;
@@ -975,15 +964,10 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 									data[(player_x + 5) / 5][player_y / 5] == L_WALL)
 									begin
 									stop <= 1'b1;
-									end
-									
-								if (data[(player_x - 1) / 5][player_y / 5] == R_WALL && show_door == 1'b1)
-									begin
-									counter_x = 1'b0;
-									counter_y = 1'b0;
-									current_state = S_DRAW;
-									end
-									
+									counter_x <= 1'b0;
+									counter_y <= 1'b0;
+									current_state <= S_DRAW;
+									end									
 								else if (data[(player_x + 5) / 5][player_y / 5] == TRAP)
 									begin
 									stop <= 1'b1;
@@ -1011,8 +995,8 @@ module game_control(clock, clock_30, start, player_x, player_y, direction, show_
 				S_KEY:      begin
 							data[key_x_pos][key_y_pos] <= BLANK;
 							data[goal_x_pos][goal_y_pos] <= GOAL;
-							counter_x = 1'b0;
-							counter_y = 1'b0;
+							counter_x <= 1'b0;
+							counter_y <= 1'b0;
 							current_state = S_DRAW;
 				            end
 			endcase
