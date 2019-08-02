@@ -1,0 +1,81 @@
+CSCB58 Project Report: Summer 2019   
+Team Member A   
+-------------   
+First Name: Chuan Peng   
+Last Name: Xu   
+Student Number: 1005305714   
+UofT E-mail Address: tonyfx.xu@mail.utoronto.ca   
+Team Member B   
+-------------   
+First Name: Wentao    
+Last Name: Ge   
+Student Number: 1005186781   
+UofT E-mail Address: wentao.ge@mail.utoronto.ca   
+Project Plan   
+--------   
+Project Title: Slidey Game with Level Builder   
+
+Provide a one paragraph description of your project:   
+The player will have a character in a room. There will be things such as walls, enemies/traps (which kill them) and maybe a few other 
+things we feel like adding. There will also be an end goal for the player to reach. These will be shown in different colors 
+(e.g. white for walls, red for enemies/traps). For movement, the player can select one of four directions. Doing so will cause them to 
+move in that direction until they are stopped by a wall or killed. The player must reach the end goal without dying. In addition 
+to prebuilt levels, the player will be able to create their own levels to play.   
+
+What is your plan for the first week?   
+
+Figuring out the animations and graphics for the game. Also planning out what things we want to have in the game. Figuring out 
+how the controls will work for the game   
+
+What is your plan for the second week?   
+
+Figuring out how to handle collision. Ideally starting the level builder as well since collision will be harder with the level builder   
+   
+   
+What is your plan for the third week? 
+  
+Finishing up the level builder and user interface. Final testing and preparing for presentation. Recording the video to be submitted   
+
+What is your backup plan if things don't work out as planned?
+   
+The level builder idea will be scrapped. The game (namely collisions) would probably be easier if we simply prebuilt the stages.
+  
+Weekly Reports   
+--------------   
+<In this space, provide a report each week of what worked and what didn't, and what (if any) changes were made to your proposal)>   
+Week 1:    
+We got the animations working as we wanted to, by using switch inputs of up, down, left, right to control a block movement on screen. 
+Considering the amount of time we have for this project, we will probably not implement the level builder and instead create 
+pre-built levels for the game.   
+
+Week 2:  
+We started working on collisions. We figured out how we intend on handling collisions in the game and we built a basic version 
+of it with a simply prebuilt level (although it doesn’t work, sadly). We also started considering what features exactly will be 
+on the game, deciding that some would take too long to implement (we’ll do them if we have time) and replacing them with simpler ones.  
+
+Week 3: 
+All the game mechanics are completely functional. Implemented and design the first level of the game. Added features such as traps, 
+doors, and keys. The only thing left to do is to design 2 more levels and the game will be finished. 
+
+Final Report:
+The final two levels were designed and implemented. Not much new was added considering we had no way of testing before the lab.
+
+References   
+----------   
+<In this space clearly indicate all external sources used in this project. If you used anyone else's code (from previous B58 
+projects or other sources) clearly indicate what you used and where you found it. Usage of any material not credited in this 
+space will be considered plagiarism. It is absolutely OK and expected to update this section as you progress in the projected.   
+
+Make sure to document what you added on top of the existing work, especially if you work with a previous project. What is it 
+that YOU added?>
+
+From the labs section of the course website (https://www.utsc.utoronto.ca/~bharrington/cscb58/labs.shtml), the following were used:
+	hex_display.v given for lab 3
+	The vga_adapter files given for lab 6
+
+Repo & Video   
+------------   
+<At the end of the project, provide links to your code repository and presentation video (and passwords if not public), if you don't want us to publish this info on future course websites, just say so here>   
+
+Video: https://www.youtube.com/watch?v=XhiBdOKa6qM&feature=youtu.be
+Repo: https://github.com/wonderge/B58FinalProject
